@@ -48,12 +48,88 @@
             padding: 0;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             font-size: 10pt;
             line-height: 1.5;
             color: #2D3436;
             overflow-x: auto;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        /* ============================================
+           ANIMATIONS & KEYFRAMES
+           ============================================ */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(13, 115, 119, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(13, 115, 119, 0.8), 0 0 30px rgba(224, 122, 95, 0.6);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
         /* ============================================
@@ -91,6 +167,21 @@
             min-width: 250px;
             height: 100%;
             background: linear-gradient(180deg, #0D7377 0%, #095555 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .sidebar-bg::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(224, 122, 95, 0.15) 0%, transparent 70%);
+                animation: float 6s ease-in-out infinite;
+            }
         }
         
         .main-bg {
@@ -132,6 +223,7 @@
             position: relative;
             z-index: 1;
             overflow-y: auto;
+            animation: slideInLeft 0.8s ease-out;
         }
         
         .main {
@@ -141,6 +233,7 @@
             position: relative;
             z-index: 1;
             overflow-y: auto;
+            animation: slideInRight 0.8s ease-out;
         }
         
         @media print {
@@ -163,6 +256,14 @@
             background: rgba(0,0,0,0.15);
             padding: 10mm 4mm 6mm 4mm;
             text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .profile-box:hover {
+                background: rgba(0,0,0,0.25);
+                transform: translateY(-2px);
+            }
         }
         
         .name {
@@ -205,11 +306,30 @@
         .contact-item {
             font-size: 8.5pt;
             margin-bottom: 1.5mm;
+            transition: all 0.3s ease;
+            padding: 1mm;
+            border-radius: 1mm;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .contact-item:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateX(3px);
+                padding-left: 2mm;
+            }
         }
         
         .contact-item a {
             color: #FFFFFF;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .contact-item a:hover {
+                color: #E07A5F;
+                text-shadow: 0 0 10px rgba(224, 122, 95, 0.5);
+            }
         }
         
         .skill-category {
@@ -228,12 +348,31 @@
             border-radius: 1.5mm;
             font-size: 7.5pt;
             margin: 0.3mm;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .skill-tag:hover {
+                background: rgba(255,255,255,0.3);
+                transform: translateY(-2px) scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
         }
         
         .skill-tag.highlight {
             background: #E07A5F;
             color: #FFFFFF;
             font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .skill-tag.highlight:hover {
+                animation: none;
+                background: #D06A4F;
+                box-shadow: 0 0 15px rgba(224, 122, 95, 0.6);
+            }
         }
         
         .lang-item {
@@ -280,12 +419,36 @@
             border-left: 3px solid #0D7377;
             page-break-inside: avoid;
             break-inside: avoid;
+            animation: slideInUp 0.8s ease-out;
+            transition: all 0.4s ease;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .stats-bar:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(13, 115, 119, 0.3);
+                border-left-width: 5px;
+            }
         }
         
         .stat-item {
             display: table-cell;
             text-align: center;
             border-right: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .stat-item:hover {
+                background: rgba(13, 115, 119, 0.05);
+                transform: scale(1.1);
+            }
+            
+            .stat-item:hover .stat-number {
+                color: #E07A5F;
+                text-shadow: 0 0 10px rgba(224, 122, 95, 0.5);
+            }
         }
         
         .stat-item:last-child {
@@ -309,7 +472,14 @@
             margin-bottom: 3mm;
             page-break-inside: avoid;
             break-inside: avoid;
+            animation: slideInUp 1s ease-out;
+            animation-fill-mode: both;
         }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
         
         .section-title {
             font-size: 10pt;
@@ -320,6 +490,25 @@
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 1.5mm;
             margin-bottom: 2.5mm;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #0D7377, #E07A5F);
+                transition: width 0.5s ease;
+            }
+            
+            .section:hover .section-title::after {
+                width: 100%;
+            }
         }
         
         .summary-text {
@@ -407,6 +596,33 @@
             border-left: 3px solid #0D7377;
             page-break-inside: avoid;
             break-inside: avoid;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .project-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(13, 115, 119, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+            
+            .project-card:hover::before {
+                left: 100%;
+            }
+            
+            .project-card:hover {
+                transform: translateX(5px) translateY(-5px);
+                box-shadow: -5px 10px 25px rgba(13, 115, 119, 0.2);
+                border-left-width: 5px;
+                background: #ffffff;
+            }
         }
         
         .project-title {
@@ -441,6 +657,17 @@
             border-radius: 1.2mm;
             font-size: 7pt;
             margin: 0.3mm;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .tech-tag:hover {
+                background: #0D7377;
+                color: #FFFFFF;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(13, 115, 119, 0.3);
+            }
         }
         
         /* ============================================
@@ -452,6 +679,17 @@
             border-left: 2px solid #0D7377;
             page-break-inside: avoid;
             break-inside: avoid;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .pub-item:hover {
+                border-left-width: 4px;
+                padding-left: 4mm;
+                background: rgba(13, 115, 119, 0.03);
+                border-radius: 0 2mm 2mm 0;
+            }
         }
         
         .pub-title {
@@ -463,6 +701,15 @@
         .pub-title a {
             color: #0D7377;
             text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .pub-title a:hover {
+                color: #E07A5F;
+                text-shadow: 0 0 8px rgba(224, 122, 95, 0.3);
+            }
         }
         
         .pub-journal {
@@ -1096,5 +1343,163 @@
     </div>
 </div>
 
+<script>
+// ============================================
+// INTERACTIVE PORTFOLIO ENHANCEMENTS
+// ============================================
+
+(function() {
+    'use strict';
+    
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Apply to sections when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        // Observe all sections, project cards, and publications
+        const elements = document.querySelectorAll('.section, .project-card, .pub-item, .exp-item, .edu-row');
+        elements.forEach((el, index) => {
+            // Stagger the animations
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+        
+        // Add click ripple effect to interactive elements
+        const rippleElements = document.querySelectorAll('.skill-tag, .tech-tag, .stat-item, .contact-item');
+        rippleElements.forEach(el => {
+            el.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.5);
+                    left: ${x}px;
+                    top: ${y}px;
+                    pointer-events: none;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+        
+        // Dynamic glow effect on project cards
+        if (window.innerWidth >= 768) {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(13, 115, 119, 0.08), #f8f9fa 50%)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.background = '#f8f9fa';
+                });
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Stats counter animation
+        const statsNumbers = document.querySelectorAll('.stat-number');
+        const animateCounter = (element) => {
+            const target = element.textContent.trim();
+            if (target.includes('+') || target.includes('×') || target.includes('%')) {
+                // Extract number
+                const match = target.match(/\d+/);
+                if (match) {
+                    const num = parseInt(match[0]);
+                    const suffix = target.replace(/\d+/, '');
+                    let current = 0;
+                    const increment = num / 30;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= num) {
+                            element.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            element.textContent = Math.floor(current) + suffix;
+                        }
+                    }, 50);
+                }
+            }
+        };
+        
+        // Trigger counter animation when stats bar is visible
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statsNumbers.forEach(stat => animateCounter(stat));
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statsObserver.observe(statsBar);
+        }
+    });
+    
+    // Add ripple animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        /* Print styles - disable animations */
+        @media print {
+            *, *::before, *::after {
+                animation-duration: 0s !important;
+                transition-duration: 0s !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+})();
+</script>
+
 </body>
 </html>
+
