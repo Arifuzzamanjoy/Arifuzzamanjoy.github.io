@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arifuzzaman Joy - AI/ML Engineer & Researcher</title>
-    <meta name="description" content="AI/ML Engineer specializing in Generative AI, Agentic Systems, and Multi-Agent LLM Architectures. Featured researcher in LatentMAS project.">
-    <meta name="keywords" content="AI Engineer, Machine Learning, Generative AI, LatentMAS, Multi-Agent Systems, Serverless GPU, MLOps">
+    <title>Arifuzzaman Joy | MLOps & AI Engineer</title>
+    <meta name="description" content="MLOps & AI Engineer specializing in Generative AI, Multi-Agent Systems, and Serverless GPU Infrastructure. Featured researcher in LatentMAS.">
+    <meta name="keywords" content="MLOps, AI Engineer, Machine Learning, Generative AI, LatentMAS, Multi-Agent Systems, Serverless GPU">
     <meta name="author" content="Arifuzzaman Joy">
-    <meta property="og:title" content="Arifuzzaman Joy - AI/ML Engineer & Researcher">
-    <meta property="og:description" content="Specializing in Generative AI, Agentic Systems, and Multi-Agent LLM Architectures">
+    <meta property="og:title" content="Arifuzzaman Joy - MLOps & AI Engineer">
+    <meta property="og:description" content="Building production-grade AI systems with 60% cost savings and 3-7× performance">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arifuzzamanjoy.github.io">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Arifuzzaman Joy",
-      "jobTitle": "AI & ML Engineer",
-      "url": "https://arifuzzamanjoy.github.io",
-      "sameAs": [
-        "https://github.com/Arifuzzamanjoy",
-        "https://linkedin.com/in/arifuzzaman-joy-ru",
-        "https://scholar.google.com/citations?user=MGxpI3sAAAAJ",
-        "https://researchgate.net/profile/Arifuzzaman-Joy"
-      ],
-      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Generative AI", "Multi-Agent Systems", "MLOps"],
-      "alumniOf": "University of Rajshahi"
-    }
-    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        @page {
-            size: A4;
-            margin: 0;
+        :root {
+            --primary: #0D7377;
+            --primary-dark: #095555;
+            --secondary: #E07A5F;
+            --accent: #D4A574;
+            --dark: #1a1a2e;
+            --dark-light: #16213e;
+            --text: #e4e4e4;
+            --text-muted: #a0a0a0;
+            --bg: #0f0f1e;
+            --bg-light: #1a1a2e;
+            --card: #16213e;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
         }
         
         * {
@@ -41,1465 +40,1368 @@
             box-sizing: border-box;
         }
         
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 10pt;
-            line-height: 1.5;
-            color: #2D3436;
-            overflow-x: auto;
-            animation: fadeIn 0.8s ease-in;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
         /* ============================================
-           ANIMATIONS & KEYFRAMES
+           ANIMATED BACKGROUND
            ============================================ */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--bg);
         }
         
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(13, 115, 119, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -250px;
+            left: -250px;
+            animation: float 20s ease-in-out infinite;
         }
         
-        @keyframes slideInRight {
-            from {
-                transform: translateX(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideInUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 5px rgba(13, 115, 119, 0.5);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(13, 115, 119, 0.8), 0 0 30px rgba(224, 122, 95, 0.6);
-            }
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .animated-bg::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(224, 122, 95, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -200px;
+            right: -200px;
+            animation: float 15s ease-in-out infinite reverse;
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -50px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
         }
         
         /* ============================================
-           PAGE CONTAINER
+           NAVIGATION
            ============================================ */
-        .page {
-            width: 100vw;
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-            page-break-after: always;
-            page-break-inside: avoid;
-        }
-        
-        .page:last-child {
-            page-break-after: auto;
-        }
-        
-        /* Print styles - A4 layout */
-        @media print {
-            .page {
-                width: 210mm;
-                height: 297mm;
-            }
-        }
-        
-        /* ============================================
-           BACKGROUND LAYERS (Full Height)
-           ============================================ */
-        .sidebar-bg {
-            position: absolute;
-            left: 0;
+        nav {
+            position: fixed;
             top: 0;
-            width: 25%;
-            min-width: 250px;
-            height: 100%;
-            background: linear-gradient(180deg, #0D7377 0%, #095555 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .sidebar-bg::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: radial-gradient(circle, rgba(224, 122, 95, 0.15) 0%, transparent 70%);
-                animation: float 6s ease-in-out infinite;
-            }
-        }
-        
-        .main-bg {
-            position: absolute;
-            left: 25%;
-            top: 0;
-            width: 75%;
-            height: 100%;
-            background: #FFFFFF;
-        }
-        
-        @media print {
-            .sidebar-bg {
-                width: 70mm;
-                height: 297mm;
-            }
-            .main-bg {
-                left: 70mm;
-                width: 140mm;
-                height: 297mm;
-            }
-        }
-        
-        /* ============================================
-           CONTENT WRAPPER
-           ============================================ */
-        .content-wrapper {
-            position: relative;
             width: 100%;
-            height: 100%;
-            display: flex;
-        }
-        
-        .sidebar {
-            width: 25%;
-            min-width: 250px;
-            height: 100%;
-            color: #FFFFFF;
-            position: relative;
-            z-index: 1;
-            overflow-y: auto;
-            animation: slideInLeft 0.8s ease-out;
-        }
-        
-        .main {
-            width: 75%;
-            height: 100%;
-            padding: 5mm 6mm 5mm 6mm;
-            position: relative;
-            z-index: 1;
-            overflow-y: auto;
-            animation: slideInRight 0.8s ease-out;
-        }
-        
-        @media print {
-            .sidebar {
-                width: 70mm;
-                height: 297mm;
-                overflow-y: visible;
-            }
-            .main {
-                width: 140mm;
-                height: 297mm;
-                overflow-y: visible;
-            }
-        }
-        
-        /* ============================================
-           SIDEBAR STYLES
-           ============================================ */
-        .profile-box {
-            background: rgba(0,0,0,0.15);
-            padding: 10mm 4mm 6mm 4mm;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .profile-box:hover {
-                background: rgba(0,0,0,0.25);
-                transform: translateY(-2px);
-            }
-        }
-        
-        .name {
-            font-size: 18pt;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5mm;
-        }
-        
-        .title {
-            font-size: 10pt;
-            font-weight: 400;
-            opacity: 0.95;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 2mm;
-        }
-        
-        .tagline {
-            font-size: 8.5pt;
-            color: #E07A5F;
-            font-style: italic;
-        }
-        
-        .sidebar-section {
-            padding: 2.5mm 4mm;
-        }
-        
-        .sidebar-title {
-            font-size: 8.5pt;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #E07A5F;
-            margin-bottom: 1.5mm;
-            border-bottom: 1px solid rgba(224, 122, 95, 0.3);
-            padding-bottom: 1mm;
-        }
-        
-        .contact-item {
-            font-size: 8.5pt;
-            margin-bottom: 1.5mm;
-            transition: all 0.3s ease;
-            padding: 1mm;
-            border-radius: 1mm;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .contact-item:hover {
-                background: rgba(255, 255, 255, 0.1);
-                transform: translateX(3px);
-                padding-left: 2mm;
-            }
-        }
-        
-        .contact-item a {
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .contact-item a:hover {
-                color: #E07A5F;
-                text-shadow: 0 0 10px rgba(224, 122, 95, 0.5);
-            }
-        }
-        
-        .skill-category {
-            font-size: 8pt;
-            color: #E07A5F;
-            font-weight: 500;
-            margin-top: 1.5mm;
-            margin-bottom: 1mm;
-        }
-        
-        .skill-tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            color: #FFFFFF;
-            padding: 1mm 2mm;
-            border-radius: 1.5mm;
-            font-size: 7.5pt;
-            margin: 0.3mm;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .skill-tag:hover {
-                background: rgba(255,255,255,0.3);
-                transform: translateY(-2px) scale(1.05);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-        }
-        
-        .skill-tag.highlight {
-            background: #E07A5F;
-            color: #FFFFFF;
-            font-weight: 600;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .skill-tag.highlight:hover {
-                animation: none;
-                background: #D06A4F;
-                box-shadow: 0 0 15px rgba(224, 122, 95, 0.6);
-            }
-        }
-        
-        .lang-item {
-            font-size: 8pt;
-            margin-bottom: 1mm;
-        }
-        
-        .cert-item {
-            font-size: 8pt;
-            margin-bottom: 1.2mm;
-            padding-left: 2mm;
-            border-left: 2px solid #E07A5F;
-        }
-        
-        .cert-item a {
-            color: #E07A5F;
-            text-decoration: none;
-        }
-        
-        .cert-note {
-            font-size: 6.5pt;
-            margin-top: 1.5mm;
-            text-align: center;
-        }
-        
-        .cert-note a {
-            color: #E07A5F;
-        }
-        
-        .sidebar-spacer {
-            height: 6mm;
-        }
-        
-        /* ============================================
-           MAIN CONTENT STYLES
-           ============================================ */
-        .stats-bar {
-            display: table;
-            width: 100%;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 2mm;
-            padding: 2mm 2mm;
-            margin-bottom: 3mm;
-            border-left: 3px solid #0D7377;
-            page-break-inside: avoid;
-            break-inside: avoid;
-            animation: slideInUp 0.8s ease-out;
-            transition: all 0.4s ease;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .stats-bar:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 8px 20px rgba(13, 115, 119, 0.3);
-                border-left-width: 5px;
-            }
-        }
-        
-        .stat-item {
-            display: table-cell;
-            text-align: center;
-            border-right: 1px solid #dee2e6;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .stat-item:hover {
-                background: rgba(13, 115, 119, 0.05);
-                transform: scale(1.1);
-            }
-            
-            .stat-item:hover .stat-number {
-                color: #E07A5F;
-                text-shadow: 0 0 10px rgba(224, 122, 95, 0.5);
-            }
-        }
-        
-        .stat-item:last-child {
-            border-right: none;
-        }
-        
-        .stat-number {
-            font-size: 14pt;
-            font-weight: 700;
-            color: #0D7377;
-        }
-        
-        .stat-label {
-            font-size: 6.5pt;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .section {
-            margin-bottom: 3mm;
-            page-break-inside: avoid;
-            break-inside: avoid;
-            animation: slideInUp 1s ease-out;
-            animation-fill-mode: both;
-        }
-        
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        
-        .section-title {
-            font-size: 10pt;
-            font-weight: 600;
-            color: #0D7377;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 1.5mm;
-            margin-bottom: 2.5mm;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .section-title::after {
-                content: '';
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background: linear-gradient(90deg, #0D7377, #E07A5F);
-                transition: width 0.5s ease;
-            }
-            
-            .section:hover .section-title::after {
-                width: 100%;
-            }
-        }
-        
-        .summary-text {
-            font-size: 10pt;
-            line-height: 1.5;
-            color: #333;
-        }
-        
-        /* ============================================
-           EXPERIENCE STYLES
-           ============================================ */
-        .exp-item {
-            margin-bottom: 2mm;
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        
-        .exp-title {
-            font-size: 10pt;
-            font-weight: 600;
-            color: #0D7377;
-        }
-        
-        .exp-company {
-            font-size: 9pt;
-            color: #E07A5F;
-        }
-        
-        .exp-date {
-            float: right;
-            font-size: 8.5pt;
-            color: #E07A5F;
-        }
-        
-        .exp-list {
-            padding-left: 3.5mm;
-            font-size: 9.5pt;
-        }
-        
-        .exp-list li {
-            margin-bottom: 1.2mm;
-            color: #333;
-        }
-        
-        /* ============================================
-           EDUCATION STYLES
-           ============================================ */
-        .edu-row {
-            margin-bottom: 2mm;
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        
-        .edu-degree {
-            font-size: 9.5pt;
-            font-weight: 600;
-            color: #0D7377;
-        }
-        
-        .edu-school {
-            font-size: 9pt;
-            color: #666;
-        }
-        
-        .edu-details {
-            float: right;
-            font-size: 8.5pt;
-            color: #888;
-        }
-        
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
-        /* ============================================
-           PROJECT CARD STYLES
-           ============================================ */
-        .project-card {
-            background: #f8f9fa;
-            border-radius: 2mm;
-            padding: 1.8mm;
-            margin-bottom: 1.8mm;
-            border-left: 3px solid #0D7377;
-            page-break-inside: avoid;
-            break-inside: avoid;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .project-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(13, 115, 119, 0.1), transparent);
-                transition: left 0.5s ease;
-            }
-            
-            .project-card:hover::before {
-                left: 100%;
-            }
-            
-            .project-card:hover {
-                transform: translateX(5px) translateY(-5px);
-                box-shadow: -5px 10px 25px rgba(13, 115, 119, 0.2);
-                border-left-width: 5px;
-                background: #ffffff;
-            }
-        }
-        
-        .project-title {
-            font-size: 10pt;
-            font-weight: 600;
-            color: #0D7377;
-            margin-bottom: 1.2mm;
-        }
-        
-        .project-year {
-            float: right;
-            background: #0D7377;
-            color: #fff;
-            font-size: 6.5pt;
-            padding: 0.8mm 1.8mm;
-            border-radius: 1.5mm;
-            font-weight: 600;
-        }
-        
-        .project-desc {
-            font-size: 9pt;
-            color: #333;
-            margin-bottom: 1.5mm;
-            line-height: 1.5;
-        }
-        
-        .tech-tag {
-            display: inline-block;
-            border: 1px solid #0D7377;
-            color: #0D7377;
-            padding: 0.6mm 1.5mm;
-            border-radius: 1.2mm;
-            font-size: 7pt;
-            margin: 0.3mm;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .tech-tag:hover {
-                background: #0D7377;
-                color: #FFFFFF;
-                transform: translateY(-2px);
-                box-shadow: 0 4px 8px rgba(13, 115, 119, 0.3);
-            }
-        }
-        
-        /* ============================================
-           PUBLICATION STYLES
-           ============================================ */
-        .pub-item {
-            margin-bottom: 1.5mm;
-            padding-left: 2.5mm;
-            border-left: 2px solid #0D7377;
-            page-break-inside: avoid;
-            break-inside: avoid;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .pub-item:hover {
-                border-left-width: 4px;
-                padding-left: 4mm;
-                background: rgba(13, 115, 119, 0.03);
-                border-radius: 0 2mm 2mm 0;
-            }
-        }
-        
-        .pub-title {
-            font-size: 11pt;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .pub-title a {
-            color: #0D7377;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        @media screen and (min-width: 768px) {
-            .pub-title a:hover {
-                color: #E07A5F;
-                text-shadow: 0 0 8px rgba(224, 122, 95, 0.3);
-            }
-        }
-        
-        .pub-journal {
-            font-size: 10pt;
-            color: #666;
-        }
-        
-        .pub-badge {
-            display: inline-block;
-            background: #D4A574;
-            color: #fff;
-            font-size: 7.5pt;
-            padding: 0.4mm 1.5mm;
-            border-radius: 1.2mm;
-            font-weight: 600;
-            margin-left: 1.5mm;
-        }
-        
-        /* ============================================
-           WHY CHOOSE ME BOX
-           ============================================ */
-        .why-box {
-            background: linear-gradient(135deg, #fff5f3 0%, #ffebe6 100%);
-            border: 1px solid #E07A5F;
-            border-radius: 2mm;
-            padding: 2.5mm;
-            margin-top: 2.5mm;
-        }
-        
-        .why-title {
-            font-size: 9pt;
-            font-weight: 600;
-            color: #0D7377;
-            margin-bottom: 1.2mm;
-        }
-        
-        .why-text {
-            font-size: 8.5pt;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        /* ============================================
-           FOOTER STYLES
-           ============================================ */
-        .page-footer {
-            position: absolute;
-            bottom: 0;
-            left: 70mm;
-            width: 140mm;
-            background: linear-gradient(135deg, #0D7377 0%, #095555 100%);
-            color: #FFFFFF;
-            padding: 2.5mm 6mm;
-            z-index: 10;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .footer-content {
+            background: rgba(15, 15, 30, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(13, 115, 119, 0.2);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .footer-left {
-            font-size: 7pt;
-            line-height: 1.4;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .footer-right {
-            text-align: right;
-            font-size: 7pt;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
         
-        .footer-contact {
-            font-weight: 600;
-            margin-bottom: 0.5mm;
-            font-size: 7.5pt;
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
         }
         
-        .footer-cta {
-            font-size: 9pt;
-            font-weight: 700;
-            color: #E07A5F;
-            margin-bottom: 1mm;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            transition: all 0.3s ease;
         }
         
         /* ============================================
-           TESTIMONIAL STYLES
+           HERO SECTION
            ============================================ */
-        .testimonial-box {
-            background: #f8f9fa;
-            border-left: 3px solid #E07A5F;
-            border-radius: 2mm;
-            padding: 1.8mm 2mm;
-            margin-bottom: 1.8mm;
-            font-size: 8pt;
-            font-style: italic;
-            color: #333;
-            line-height: 1.4;
-            page-break-inside: avoid;
-            break-inside: avoid;
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
         }
         
-        .testimonial-author {
-            font-style: normal;
-            font-weight: 600;
-            color: #0D7377;
-            margin-top: 0.8mm;
-            font-size: 7pt;
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
         }
         
-        /* ============================================
-           IMPROVED SECTION STYLES
-           ============================================ */
-        .section-compact {
-            margin-bottom: 2.5mm;
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #e8f5f5 0%, #f0f9f9 100%);
-            border: 1px solid #0D7377;
-            border-radius: 2mm;
-            padding: 1.8mm;
-            margin-bottom: 2mm;
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        
-        .metric-inline {
+        .hero-badge {
             display: inline-block;
-            background: #0D7377;
-            color: #fff;
-            padding: 0.5mm 2mm;
-            border-radius: 1.5mm;
-            font-size: 7pt;
+            background: rgba(13, 115, 119, 0.2);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
             font-weight: 600;
-            margin: 0 0.5mm;
+            margin-bottom: 1.5rem;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            animation: slideDown 1s ease-out;
+        }
+        
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            animation: slideDown 1.2s ease-out;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            animation: slideDown 1.4s ease-out;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: slideDown 1.6s ease-out;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(13, 115, 119, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-badge {
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ============================================
+           FEATURED PROJECT SECTION
+           ============================================ */
+        .featured-project {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(13, 115, 119, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-project::before {
+            content: 'FEATURED';
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .featured-project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(13, 115, 119, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .project-badges {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(13, 115, 119, 0.2);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.4rem 0.875rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-special {
+            background: rgba(224, 122, 95, 0.2);
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .project-description {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .project-highlights {
+            background: rgba(13, 115, 119, 0.1);
+            border-left: 3px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .project-highlights h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .project-highlights ul {
+            list-style: none;
+            color: var(--text-muted);
+        }
+        
+        .project-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .project-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .metric-card {
+            background: rgba(13, 115, 119, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag:hover {
+            background: rgba(13, 115, 119, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* ============================================
+           PROJECT GRID
+           ============================================ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(13, 115, 119, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 115, 119, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-year {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(13, 115, 119, 0.2);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        
+        .card-description {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ============================================
+           SKILLS SECTION
+           ============================================ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(13, 115, 119, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 115, 119, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-item {
+            background: rgba(13, 115, 119, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* ============================================
+           PUBLICATIONS SECTION
+           ============================================ */
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .publication {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(13, 115, 119, 0.2);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .publication:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(13, 115, 119, 0.2);
+        }
+        
+        .pub-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+        
+        .pub-title a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .pub-title a:hover {
+            color: var(--primary);
+        }
+        
+        .pub-journal {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pub-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .pub-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(13, 115, 119, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 115, 119, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .contact-value {
+            color: var(--text-muted);
+        }
+        
+        .contact-value a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-value a:hover {
+            color: var(--secondary);
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--dark-light);
+            border-top: 1px solid rgba(13, 115, 119, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(13, 115, 119, 0.1);
+            border: 1px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            nav .container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: rgba(15, 15, 30, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .hero {
+                padding-top: 80px;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            section {
+                padding: 4rem 1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ============================================
+           SCROLL REVEAL ANIMATION
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-
-<!-- =====================================================================
-     PAGE 1
-     ===================================================================== -->
-<div class="page">
-    <!-- Background layers for full-height colors -->
-    <div class="sidebar-bg"></div>
-    <div class="main-bg"></div>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
     
-    <!-- Content -->
-    <div class="content-wrapper">
-        <!-- ==================== SIDEBAR ==================== -->
-        <div class="sidebar">
-            <!-- Profile Header -->
-            <div class="profile-box">
-                <div class="name">ARIFUZZAMAN<br>JOY</div>
-                <div class="title">AI & ML Engineer</div>
-                <div class="tagline">Generative AI • Multimodal Systems<br>MLOps • Serverless GPU</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">AJ</div>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#publications">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 Featured in Gen-Verse LatentMAS • HF Paper of the Day</div>
+            <h1>
+                Building Production-Grade<br>
+                <span class="gradient-text">AI/MLOps Systems</span>
+            </h1>
+            <p class="hero-subtitle">Arifuzzaman Joy | AI & MLOps Engineer</p>
+            <p class="hero-description">
+                Transforming research into production with serverless GPU infrastructure. 
+                Specializing in Generative AI, Multi-Agent Systems, and high-performance ML deployments.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">60%</span>
+                    <span class="stat-label">Cost Reduction</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3-7×</span>
+                    <span class="stat-label">Performance Boost</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Production Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">5-Star Rating</span>
+                </div>
             </div>
             
-            <!-- Contact Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Contact</div>
-                <div class="contact-item">📧 <a href="mailto:Joy.apee@gmail.com" target="_blank">Joy.apee@gmail.com</a></div>
-                <div class="contact-item">📱 +880 1521 417908</div>
-                <div class="contact-item">🔗 <a href="https://linkedin.com/in/arifuzzaman-joy-ru" target="_blank">LinkedIn</a></div>
-                <div class="contact-item">💻 <a href="https://github.com/Arifuzzamanjoy" target="_blank">GitHub</a></div>
-                <div class="contact-item">📚 <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ" target="_blank">Google Scholar</a></div>
-                <div class="contact-item">🔬 <a href="https://researchgate.net/profile/Arifuzzaman-Joy" target="_blank">ResearchGate</a></div>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View Projects →
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Project -->
+    <section id="projects">
+        <div class="section-header reveal">
+            <div class="section-badge">FEATURED WORK</div>
+            <h2 class="section-title">Portfolio Highlights</h2>
+            <p class="section-description">
+                Production-grade AI systems deployed at scale with cutting-edge MLOps practices
+            </p>
+        </div>
+        
+        <div class="featured-project reveal">
+            <div class="project-badges">
+                <span class="badge badge-special">⭐ Gen-Verse Featured</span>
+                <span class="badge">📄 arXiv:2511.20639</span>
+                <span class="badge">🤗 HF Paper of the Day</span>
             </div>
             
-            <!-- Core Skills Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Core Skills</div>
-                
-                <div class="skill-category">AI/ML</div>
-                <span class="skill-tag highlight">Generative AI</span>
-                <span class="skill-tag highlight">Agentic AI</span>
-                <span class="skill-tag highlight">Multi-Agent Systems</span>
-                <span class="skill-tag">Deep Learning</span>
-                <span class="skill-tag">NLP</span>
-                <span class="skill-tag">Computer Vision</span>
-                <span class="skill-tag">RAG Systems</span>
-                
-                <div class="skill-category">LLMs & GenAI</div>
-                <span class="skill-tag">GPT-4</span>
-                <span class="skill-tag">Claude</span>
-                <span class="skill-tag">Gemini</span>
-                <span class="skill-tag">Llama 3</span>
-                <span class="skill-tag">Flux</span>
-                <span class="skill-tag">SDXL</span>
-                <span class="skill-tag">LoRA</span>
-                
-                <div class="skill-category">Serverless GPU</div>
-                <span class="skill-tag highlight">RunPod</span>
-                <span class="skill-tag highlight">Modal</span>
-                <span class="skill-tag">Replicate</span>
-                <span class="skill-tag">Lambda Labs</span>
-                <span class="skill-tag">FSDP</span>
-                <span class="skill-tag">DeepSpeed</span>
-                
-                <div class="skill-category">MLOps & Cloud</div>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Azure ML</span>
-                <span class="skill-tag">CI/CD</span>
-                
-                <div class="skill-category">Frameworks</div>
-                <span class="skill-tag">PyTorch</span>
-                <span class="skill-tag">TensorFlow</span>
-                <span class="skill-tag">LangChain</span>
-                <span class="skill-tag">HuggingFace</span>
-                <span class="skill-tag">Diffusers</span>
+            <h3 class="project-title">🧠 LatentMAS-SLoRA: Multi-Agent Reasoning with S-LoRA</h3>
+            
+            <p class="project-description">
+                Revolutionary multi-agent framework that moves collaboration from token space to latent space, 
+                augmented with role-specialized dynamically switchable LoRA adapters. Featured as 1 of 5 community 
+                extensions in the official Gen-Verse LatentMAS repository (764⭐).
+            </p>
+            
+            <div class="project-highlights">
+                <h4>🎯 Key Innovations</h4>
+                <ul>
+                    <li><strong>Latent Space Collaboration:</strong> Agents communicate via hidden states → 50-80% token reduction, 3-7× speedup</li>
+                    <li><strong>S-LoRA Integration:</strong> 4 specialized adapters (Medical, Reward, Comics, Point Detection) hot-swap per query</li>
+                    <li><strong>Vision-Language Support:</strong> Qwen2.5-VL-7B-Instruct with multimodal reasoning</li>
+                    <li><strong>Advanced RAG:</strong> Document injection via URL, base64, JSON with domain-aware routing</li>
+                    <li><strong>Production Ready:</strong> RunPod serverless with Docker, CI/CD, ~200ms latency per agent</li>
+                </ul>
             </div>
             
-            <!-- Languages Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Languages</div>
-                <div class="lang-item">English — Fluent</div>
-                <div class="lang-item">Bangla — Native</div>
+            <div class="project-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">75%</span>
+                    <span class="metric-label">VRAM Reduction</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">40%</span>
+                    <span class="metric-label">Latency ↓</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">50-80%</span>
+                    <span class="metric-label">Token Reduction</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">3-7×</span>
+                    <span class="metric-label">Speedup</span>
+                </div>
             </div>
             
-            <!-- Certifications Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Certifications</div>
-                <div class="cert-item"><a href="#" target="_blank">Deep Learning TensorFlow — IBM</a></div>
-                <div class="cert-item"><a href="#" target="_blank">Prompt Engineering — Vanderbilt</a></div>
-                <div class="cert-item"><a href="#" target="_blank">SQL Advanced — HackerRank</a></div>
-                <div class="cert-item"><a href="#" target="_blank">MATLAB — Vanderbilt</a></div>
-                <div class="cert-item"><a href="#" target="_blank">Data Analysis — Coursera</a></div>
-                <div class="cert-note"><a href="https://linkedin.com/in/arifuzzaman-joy-ru" target="_blank">📜 View all on LinkedIn →</a></div>
+            <div class="project-tech">
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">Qwen2.5-VL-7B</span>
+                <span class="tech-tag">S-LoRA</span>
+                <span class="tech-tag">PEFT</span>
+                <span class="tech-tag">vLLM</span>
+                <span class="tech-tag">RunPod</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">RAG</span>
+                <span class="tech-tag">CI/CD</span>
+            </div>
+            
+            <div class="project-links">
+                <a href="https://github.com/Arifuzzamanjoy/latent_mas_slora" target="_blank" class="btn btn-primary">
+                    📦 GitHub
+                </a>
+                <a href="https://www.youtube.com/watch?v=g7sxYjwgRRk" target="_blank" class="btn btn-secondary">
+                    🎥 Demo
+                </a>
+                <a href="https://arxiv.org/abs/2511.20639" target="_blank" class="btn btn-secondary">
+                    📄 Paper
+                </a>
             </div>
         </div>
         
-        <!-- ==================== MAIN CONTENT ==================== -->
-        <div class="main">
-            <!-- Stats Bar -->
-            <div class="stats-bar">
-                <div class="stat-item">
-                    <div class="stat-number">7+</div>
-                    <div class="stat-label">Years Python</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years ML</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">SCI Papers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3-7×</div>
-                    <div class="stat-label">Speedup</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">5-Star</div>
-                </div>
-            </div>
-            
-            <!-- Professional Summary -->
-            <div class="section">
-                <div class="section-title">Professional Summary</div>
-                <p class="summary-text">
-                    Results-driven <strong>AI/ML Engineer & Researcher</strong> specializing in <strong>Generative AI, Agentic AI, and Multimodal Systems</strong>. Expert in deploying large-scale ML models using <strong>serverless GPU infrastructure (RunPod, Modal, Replicate)</strong> and MLOps pipelines. <strong>Featured researcher</strong> in the official Gen-Verse LatentMAS project (\u2b50 764 stars, \ud83e\udd17 HF Paper of the Day). Published researcher with <strong>4 SCI papers in Q1 journals (IF up to 7.1)</strong>. Proven track record transforming R&D into production with <strong>60% cost reduction</strong> and <strong>3-7&times; performance speedups</strong>.
+        <!-- Other Projects Grid -->
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="card-year">2025</div>
+                <div class="card-icon">🤖</div>
+                <h3 class="card-title">AI Calling Agent Platform</h3>
+                <p class="card-description">
+                    Agentic AI platform for real-time voice conversations with SIP/WebRTC telephony. 
+                    <strong>&lt;500ms latency</strong> with emotionally expressive synthesis.
                 </p>
-            </div>
-            
-            <!-- Publications - MOVED TO PAGE 1 -->
-            <div class="section">
-                <div class="section-title">Research Publications <span style="font-size: 8.5pt; font-weight: normal; color: #E07A5F;">(4 SCI-Indexed in Q1 Journals)</span></div>
-                
-                <div class="pub-item">
-                    <div class="pub-title"><a href="https://doi.org/10.1016/j.seta.2025.104264" target="_blank">Machine learning assisted revelation of the best performing single hetero-junction thermophotovoltaic cell</a></div>
-                    <div class="pub-journal">Sustainable Energy Technologies and Assessments, 2025 <span class="pub-badge">Q1 • IF 7.1</span></div>
-                </div>
-                
-                <div class="pub-item">
-                    <div class="pub-title"><a href="https://doi.org/10.1016/j.solener.2024.112870" target="_blank">Machine Learning-Enabled Performance Exploration of AuCuSe₄ in Thermophotovoltaic Cell</a></div>
-                    <div class="pub-journal">Solar Energy, 2024 <span class="pub-badge">Q1 • IF 6.0</span></div>
-                </div>
-                
-                <div class="pub-item">
-                    <div class="pub-title"><a href="https://doi.org/10.14569/IJACSA.2024.01507126" target="_blank">Unleashing the Power of Open-Source Transformers in Medical Imaging</a></div>
-                    <div class="pub-journal">Int'l Journal of Advanced Computer Science & Applications, 2024 <span class="pub-badge">SCI</span></div>
-                </div>
-                
-                <div class="pub-item" style="margin-bottom: 1.5mm;">
-                    <div class="pub-title"><a href="https://doi.org/10.1016/j.heliyon.2023.e19011" target="_blank">Numerical studies on a ternary AgInTe₂ chalcopyrite thin film solar cell</a></div>
-                    <div class="pub-journal">Heliyon (Cell Press), 2023 <span class="pub-badge">Q1 • IF 4.0</span></div>
-                </div>
-                
-                <div style="text-align: center; font-size: 9pt; color: #0D7377;">
-                    <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ" style="color: #0D7377; text-decoration: none; font-weight: 600;" target="_blank">📚 View Complete Publication List on Google Scholar →</a>
-                </div>
-            </div>
-            
-            <!-- Professional Experience -->
-            <div class="section">
-                <div class="section-title">Professional Experience</div>
-                
-                <!-- Job 1: Freelance -->
-                <div class="exp-item clearfix">
-                    <span class="exp-date">2023 — Present</span>
-                    <div class="exp-title">AI & Machine Learning Engineer</div>
-                    <div class="exp-company">Freelance — Upwork, Fiverr & Direct Clients</div>
-                    <ul class="exp-list">
-                        <li>Delivered <strong>15+ production AI projects</strong> with 100% 5-star reviews in LLM, voice AI, and image generation</li>
-                        <li>Deployed on <strong>serverless GPU (RunPod, Modal)</strong>, reducing costs by <strong>60%</strong></li>
-                    </ul>
-                </div>
-                
-                <!-- Job 2: Research Assistant -->
-                <div class="exp-item clearfix">
-                    <span class="exp-date">Mar 2022 — May 2023</span>
-                    <div class="exp-title">Research Assistant — AI & Renewable Energy</div>
-                    <div class="exp-company">Rajshahi University Solar Lab / AI Lab</div>
-                    <ul class="exp-list">
-                        <li>Published <strong>4 SCI-indexed papers in Q1 journals (IF 4-7.1)</strong> on ML-driven solar cell optimization</li>
-                        <li>Applied neural networks to improve thermophotovoltaic efficiency by <strong>18%</strong></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Education -->
-            <div class="section">
-                <div class="section-title">Education</div>
-                <div class="edu-row clearfix">
-                    <span class="edu-details">2017 — 2020 | CGPA: 3.13</span>
-                    <div class="edu-degree">B.Sc. in Electrical & Electronic Engineering</div>
-                    <div class="edu-school">University of Rajshahi, Bangladesh</div>
-                </div>
-                <div class="edu-row clearfix">
-                    <span class="edu-details">2015 — 2016 | GPA: 5.00</span>
-                    <div class="edu-degree">H.Sc. in Science</div>
-                    <div class="edu-school">Dhaka Education Board</div>
-                </div>
-                <div class="edu-row clearfix">
-                    <span class="edu-details">2013 — 2014 | GPA: 5.00</span>
-                    <div class="edu-degree">S.Sc. in Science</div>
-                    <div class="edu-school">Dhaka Education Board</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- =====================================================================
-     PAGE 2
-     ===================================================================== -->
-<div class="page">
-    <!-- Background layers for full-height colors -->
-    <div class="sidebar-bg"></div>
-    <div class="main-bg"></div>
-    
-    <!-- Content -->
-    <div class="content-wrapper">
-        <!-- ==================== SIDEBAR PAGE 2 ==================== -->
-        <div class="sidebar">
-            <div class="sidebar-spacer"></div>
-            
-            <!-- Programming Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Programming</div>
-                <span class="skill-tag highlight">Python 7+ yrs</span>
-                <span class="skill-tag">SQL 5+ yrs</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Bash</span>
-                <span class="skill-tag">Git</span>
-            </div>
-            
-            <!-- Databases Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Databases</div>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">Firebase</span>
-                <span class="skill-tag">Pinecone</span>
-                <span class="skill-tag">ChromaDB</span>
-                <span class="skill-tag">Weaviate</span>
-            </div>
-            
-            <!-- Voice & Speech Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Voice & Speech</div>
-                <span class="skill-tag">Whisper</span>
-                <span class="skill-tag">WhisperX</span>
-                <span class="skill-tag">F5-TTS</span>
-                <span class="skill-tag">Voice Clone</span>
-                <span class="skill-tag">LiveKit</span>
-                <span class="skill-tag">WebRTC</span>
-                <span class="skill-tag">SIP</span>
-            </div>
-            
-            <!-- Tools & APIs Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Tools & APIs</div>
-                <span class="skill-tag">FastAPI</span>
-                <span class="skill-tag">Gradio</span>
-                <span class="skill-tag">Streamlit</span>
-                <span class="skill-tag">OpenCV</span>
-                <span class="skill-tag">librosa</span>
-                <span class="skill-tag">CUDA</span>
-            </div>
-            
-            <!-- Why Choose Me Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Why Choose Me?</div>
-                <div style="font-size: 8.5pt; line-height: 1.6;">
-                    ⭐ <strong>Featured Researcher:</strong> LatentMAS (Gen-Verse)<br>
-                    ✅ <strong>End-to-End:</strong> Research → Production<br>
-                    ✅ <strong>Performance:</strong> 3-7× speedup, 75% VRAM↓<br>
-                    ✅ <strong>Published:</strong> 4 Q1 SCI papers (IF 7.1)<br>
-                    ✅ <strong>Track Record:</strong> 100% 5-star reviews<br>
-                    ✅ <strong>Cutting-Edge:</strong> Latent Space AI, RAG
-                </div>
-            </div>
-            
-            <!-- Additional Expertise Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Specialized In</div>
-                <div style="font-size: 8pt; line-height: 1.6; margin-bottom: 1.5mm;">
-                    <div style="margin-bottom: 2mm;">
-                        <div style="color: #E07A5F; font-weight: 600; margin-bottom: 0.5mm;">🤖 Agentic Systems</div>
-                        <div style="font-size: 7.5pt;">Autonomous workflows, LangGraph, Tool calling, Multi-agent orchestration</div>
-                    </div>
-                    <div style="margin-bottom: 2mm;">
-                        <div style="color: #E07A5F; font-weight: 600; margin-bottom: 0.5mm;">🎨 Generative AI</div>
-                        <div style="font-size: 7.5pt;">Text-to-Image, Video generation, Custom LoRA training, Style transfer</div>
-                    </div>
-                    <div style="margin-bottom: 2mm;">
-                        <div style="color: #E07A5F; font-weight: 600; margin-bottom: 0.5mm;">🎙️ Voice AI</div>
-                        <div style="font-size: 7.5pt;">Voice cloning, TTS, STT, Real-time processing, Multilingual support</div>
-                    </div>
-                    <div style="margin-bottom: 2mm;">
-                        <div style="color: #E07A5F; font-weight: 600; margin-bottom: 0.5mm;">⚡ Performance</div>
-                        <div style="font-size: 7.5pt;">Model quantization, GPU optimization, Sub-200ms inference, Cost reduction</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Client Industries Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Client Industries</div>
-                <div style="font-size: 8pt; line-height: 1.6;">
-                    🏥 Healthcare & Medical<br>
-                    💼 Enterprise SaaS<br>
-                    🎓 EdTech & E-learning<br>
-                    🛍️ E-commerce & Retail<br>
-                    📞 Call Centers & BPO<br>
-                    🎬 Media & Entertainment
-                </div>
-            </div>
-            
-            <!-- Work Style Section -->
-            <div class="sidebar-section">
-                <div class="sidebar-title">Work Style</div>
-                <div style="font-size: 8pt; line-height: 1.6;">
-                    ⏰ <strong>Availability:</strong> Full-time<br>
-                    🌍 <strong>Time Zone:</strong> UTC+6 (Flexible)<br>
-                    💬 <strong>Communication:</strong> Daily updates<br>
-                    📊 <strong>Delivery:</strong> Agile sprints<br>
-                    🔄 <strong>Support:</strong> Post-deployment included
-                </div>
-            </div>
-        </div>
-        
-        <!-- ==================== MAIN CONTENT PAGE 2 ==================== -->
-        <div class="main">
-            <!-- Key Projects -->
-            <div class="section-compact">
-                <div class="section-title">Key Projects</div>
-                
-                <!-- Project 1: LatentMAS-SLoRA -->
-                <div class="project-card" style="border-left: 4px solid #E07A5F;">
-                    <div class="project-title clearfix">
-                        <span class="project-year">2026</span>
-                        🧠 LatentMAS-SLoRA: Latent Multi-Agent System with S-LoRA
-                        <div style="margin-top: 2mm; font-size: 7.5pt; font-weight: normal;">
-                            <span style="background: #E07A5F; color: white; padding: 0.5mm 2mm; border-radius: 1mm; margin-right: 1mm;">⭐ Featured in Gen-Verse/LatentMAS</span>
-                            <span style="background: #0D7377; color: white; padding: 0.5mm 2mm; border-radius: 1mm; margin-right: 1mm;">📄 arXiv:2511.20639</span>
-                            <span style="background: #D4A574; color: white; padding: 0.5mm 2mm; border-radius: 1mm;">🤗 HF Paper of the Day</span>
-                        </div>
-                    </div>
-                    <p class="project-desc" style="margin-top: 2mm;">
-                        <strong>Revolutionary multi-agent reasoning framework</strong> that moves agent collaboration from token space into latent space, augmented with <strong>role-specialized dynamically switchable LoRA adapters</strong>. Featured as one of 5 community extensions in the <a href="https://github.com/Gen-Verse/LatentMAS" style="color: #0D7377; text-decoration: none; font-weight: 600;" target="_blank">official Gen-Verse LatentMAS repository</a>.
-                    </p>
-                    <div style="background: #f0f9f9; padding: 2mm; border-radius: 1.5mm; margin: 2mm 0; border-left: 3px solid #0D7377;">
-                        <div style="font-weight: 600; color: #0D7377; font-size: 9pt; margin-bottom: 1mm;">🎯 Key Innovations:</div>
-                        <ul style="margin: 0; padding-left: 4mm; font-size: 8.5pt; line-height: 1.6;">
-                            <li><strong>Latent Space Collaboration:</strong> Agents communicate via hidden states instead of tokens → <strong>50-80% token reduction, 3-7× speedup</strong></li>
-                            <li><strong>S-LoRA Integration:</strong> 4 specialized LoRA adapters (Medical, Reward, Comics, Point Detection) hot-swap per query</li>
-                            <li><strong>Vision-Language Support:</strong> Qwen2.5-VL-7B-Instruct (8B params) with multimodal reasoning</li>
-                            <li><strong>Advanced RAG:</strong> Document injection via URL, base64, JSON with domain-aware routing</li>
-                            <li><strong>4-Agent Pipeline:</strong> Planner → Critic (latent) → Refiner (latent) → Judger with <strong>~200ms latency per agent</strong></li>
-                            <li><strong>Production Deployment:</strong> RunPod serverless with Docker, CI/CD pipelines, session persistence</li>
-                        </ul>
-                    </div>
-                    <div style="font-size: 8pt; color: #555; margin: 2mm 0;">
-                        <strong>Impact:</strong> Achieves superior performance on GSM8K, AIME24/25, GPQA, MBPP+, HumanEval+, MedQA with 75% VRAM reduction and 40% inter-agent latency reduction via KV-cache sharing.
-                    </div>
-                    <div style="margin-top: 2mm;">
-                        <a href="https://github.com/Arifuzzamanjoy/latent_mas_slora" target="_blank" style="display: inline-block; background: #0D7377; color: white; padding: 1mm 3mm; border-radius: 1.5mm; text-decoration: none; font-size: 7.5pt; font-weight: 600; margin-right: 1mm;">📦 GitHub Repo</a>
-                        <a href="https://www.youtube.com/watch?v=g7sxYjwgRRk" target="_blank" style="display: inline-block; background: #E07A5F; color: white; padding: 1mm 3mm; border-radius: 1.5mm; text-decoration: none; font-size: 7.5pt; font-weight: 600; margin-right: 1mm;">🎥 Demo Video</a>
-                        <a href="https://arxiv.org/abs/2511.20639" target="_blank" style="display: inline-block; background: #D4A574; color: white; padding: 1mm 3mm; border-radius: 1.5mm; text-decoration: none; font-size: 7.5pt; font-weight: 600;">📄 Research Paper</a>
-                    </div>
-                    <div style="margin-top: 2mm;">
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">Qwen2.5-VL-7B</span>
-                        <span class="tech-tag">S-LoRA</span>
-                        <span class="tech-tag">PEFT</span>
-                        <span class="tech-tag">Latent Memory</span>
-                        <span class="tech-tag">vLLM</span>
-                        <span class="tech-tag">RunPod</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">RAG</span>
-                        <span class="tech-tag">CI/CD</span>
-                    </div>
-                </div>
-                
-                <!-- Project 2: AI Calling Agent -->
-                <div class="project-card">
-                    <div class="project-title clearfix">
-                        <span class="project-year">2025</span>
-                        🤖 Humanoid AI Calling Agent Platform
-                    </div>
-                    <p class="project-desc">
-                        Built <strong>Agentic AI platform</strong> for real-time voice conversations with SIP/WebRTC telephony. Achieved <strong>&lt;500ms latency</strong> with emotionally expressive voice synthesis.
-                    </p>
-                    <span class="tech-tag">Python</span>
+                <div class="project-tech">
                     <span class="tech-tag">LiveKit</span>
                     <span class="tech-tag">GPT-4</span>
-                    <span class="tech-tag">SIP/WebRTC</span>
+                    <span class="tech-tag">WebRTC</span>
                     <span class="tech-tag">RunPod</span>
                 </div>
-                
-                <!-- Project 3: Video Generation -->
-                <div class="project-card">
-                    <div class="project-title clearfix">
-                        <span class="project-year">2025</span>
-                        🎬 Multi-GPU Video Generation (Wan 2.2)
-                    </div>
-                    <p class="project-desc">
-                        Architected <strong>distributed inference pipeline</strong> for SOTA video generation (T2V, I2V, S2V). Achieved <strong>3x throughput</strong> using FSDP on serverless GPU clusters.
-                    </p>
+            </div>
+            
+            <div class="project-card reveal">
+                <div class="card-year">2025</div>
+                <div class="card-icon">🎬</div>
+                <h3 class="card-title">Multi-GPU Video Generation</h3>
+                <p class="card-description">
+                    Distributed inference pipeline for SOTA video generation (T2V, I2V, S2V). 
+                    Achieved <strong>3× throughput</strong> using FSDP on serverless GPU clusters.
+                </p>
+                <div class="project-tech">
                     <span class="tech-tag">PyTorch</span>
                     <span class="tech-tag">FSDP</span>
-                    <span class="tech-tag">Docker</span>
                     <span class="tech-tag">Modal</span>
                     <span class="tech-tag">DiT</span>
                 </div>
-
-                <!-- Project 5: Image Generation -->
-                <div class="project-card">
-                    <div class="project-title clearfix">
-                        <span class="project-year">2024</span>
-                        🎨 Custom LoRA Training for Image Generation
-                    </div>
-                    <p class="project-desc">
-                        Self-hosted Flux.1 Dev with <strong>custom LoRA fine-tuning</strong>. <strong>80% cost reduction</strong> in client photography.
-                    </p>
+            </div>
+            
+            <div class="project-card reveal">
+                <div class="card-year">2024</div>
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">Custom LoRA Training Pipeline</h3>
+                <p class="card-description">
+                    Self-hosted Flux.1 Dev with custom LoRA fine-tuning infrastructure. 
+                    Delivered <strong>80% cost reduction</strong> for client photography workflows.
+                </p>
+                <div class="project-tech">
                     <span class="tech-tag">Flux</span>
                     <span class="tech-tag">LoRA</span>
                     <span class="tech-tag">Gradio</span>
-                    <span class="tech-tag">CLIP</span>
-                    <span class="tech-tag">Diffusers</span>
                     <span class="tech-tag">Modal</span>
                 </div>
-                
-                <!-- Project 6: RAG Document Intelligence -->
-                <div class="project-card">
-                    <div class="project-title clearfix">
-                        <span class="project-year">2024</span>
-                        📚 Enterprise RAG Document Intelligence
-                    </div>
-                    <p class="project-desc">
-                        Multi-modal RAG with vector search & semantic chunking. <strong>40% accuracy boost</strong> over baseline.
-                    </p>
+            </div>
+            
+            <div class="project-card reveal">
+                <div class="card-year">2024</div>
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">Enterprise RAG System</h3>
+                <p class="card-description">
+                    Multi-modal RAG with vector search & semantic chunking. 
+                    Achieved <strong>40% accuracy boost</strong> over baseline implementation.
+            </p>
+                <div class="project-tech">
                     <span class="tech-tag">LangChain</span>
                     <span class="tech-tag">Pinecone</span>
                     <span class="tech-tag">GPT-4</span>
-                    <span class="tech-tag">FAISS</span>
                     <span class="tech-tag">FastAPI</span>
                 </div>
             </div>
-            
-            <!-- Additional Technical Skills -->
-            <div class="section-compact">
-                <div class="section-title">Advanced Technical Stack</div>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; font-size: 9.5pt;">
-                    <div>
-                        <div style="font-weight: 600; color: #0D7377; margin-bottom: 0.8mm;">🚀 Model Deployment</div>
-                        <div style="font-size: 9pt; line-height: 1.5; color: #555;">vLLM, TensorRT, ONNX, Triton, GPTQ, AWQ Quantization</div>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; color: #0D7377; margin-bottom: 0.8mm;">👁️ Computer Vision</div>
-                        <div style="font-size: 9pt; line-height: 1.5; color: #555;">YOLO v8-v11, SAM, GroundingDINO, PaddleOCR, EasyOCR</div>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; color: #0D7377; margin-bottom: 0.8mm;">🎵 Audio/Speech AI</div>
-                        <div style="font-size: 9pt; line-height: 1.5; color: #555;">Whisper, F5-TTS, Demucs, Diarization, Noise Reduction</div>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; color: #0D7377; margin-bottom: 0.8mm;">📊 ML Observability</div>
-                        <div style="font-size: 9pt; line-height: 1.5; color: #555;">Prometheus, Grafana, WandB, MLflow, LangSmith</div>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header reveal">
+            <div class="section-badge">EXPERTISE</div>
+            <h2 class="section-title">Technical Arsenal</h2>
+            <p class="section-description">
+                Full-stack MLOps with cutting-edge AI/ML technologies
+            </p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category reveal">
+                <div class="skill-icon">🤖</div>
+                <h3 class="skill-name">AI/ML</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Generative AI</span>
+                    <span class="skill-item">Agentic AI</span>
+                    <span class="skill-item">Multi-Agent Systems</span>
+                    <span class="skill-item">Deep Learning</span>
+                    <span class="skill-item">NLP</span>
+                    <span class="skill-item">Computer Vision</span>
+                    <span class="skill-item">RAG Systems</span>
                 </div>
             </div>
             
-            <!-- Final CTA Section -->
-            <div style="background: linear-gradient(135deg, #fff5f3 0%, #ffebe6 100%); border: 2px solid #E07A5F; border-radius: 2mm; padding: 2mm; text-align: center; margin-top: 5mm;">
-                <div style="font-size: 11.5pt; font-weight: 700; color: #0D7377; margin-bottom: 1mm;">🚀 Ready to Build Production-Grade AI Solutions?</div>
-                <div style="font-size: 9.5pt; color: #333; line-height: 1.4; margin-bottom: 1mm;">
-                    Let's transform your AI vision into reality with<span class="metric-inline">60% cost savings</span><span class="metric-inline">100% satisfaction</span><span class="metric-inline">&lt;200ms latency</span>
+            <div class="skill-category reveal">
+                <div class="skill-icon">🚀</div>
+                <h3 class="skill-name">MLOps & Cloud</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Kubernetes</span>
+                    <span class="skill-item">CI/CD</span>
+                    <span class="skill-item">AWS</span>
+                    <span class="skill-item">Azure ML</span>
+                    <span class="skill-item">Prometheus</span>
+                    <span class="skill-item">Grafana</span>
                 </div>
-                <div style="font-size: 10pt; color: #0D7377; font-weight: 600;">
-                    📧 Joy.apee@gmail.com  •  📱 +880 1521 417908  •  💼 <a href="https://linkedin.com/in/arifuzzaman-joy-ru" style="color: #0D7377; text-decoration: none;" target="_blank">LinkedIn</a>
+            </div>
+            
+            <div class="skill-category reveal">
+                <div class="skill-icon">⚡</div>
+                <h3 class="skill-name">Serverless GPU</h3>
+                <div class="skill-list">
+                    <span class="skill-item">RunPod</span>
+                    <span class="skill-item">Modal</span>
+                    <span class="skill-item">Replicate</span>
+                    <span class="skill-item">Lambda Labs</span>
+                    <span class="skill-item">FSDP</span>
+                    <span class="skill-item">DeepSpeed</span>
+                </div>
+            </div>
+            
+            <div class="skill-category reveal">
+                <div class="skill-icon">🛠️</div>
+                <h3 class="skill-name">Frameworks</h3>
+                <div class="skill-list">
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">LangChain</span>
+                    <span class="skill-item">HuggingFace</span>
+                    <span class="skill-item">vLLM</span>
+                    <span class="skill-item">FastAPI</span>
+                </div>
+            </div>
+            
+            <div class="skill-category reveal">
+                <div class="skill-icon">🧬</div>
+                <h3 class="skill-name">LLMs & GenAI</h3>
+                <div class="skill-list">
+                    <span class="skill-item">GPT-4</span>
+                    <span class="skill-item">Claude</span>
+                    <span class="skill-item">Llama 3</span>
+                    <span class="skill-item">Flux</span>
+                    <span class="skill-item">SDXL</span>
+                    <span class="skill-item">LoRA/QLoRA</span>
+                </div>
+            </div>
+            
+            <div class="skill-category reveal">
+                <div class="skill-icon">🎙️</div>
+                <h3 class="skill-name">Voice & Speech</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Whisper</span>
+                    <span class="skill-item">F5-TTS</span>
+                    <span class="skill-item">Voice Clone</span>
+                    <span class="skill-item">LiveKit</span>
+                    <span class="skill-item">WebRTC</span>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<script>
-// ============================================
-// INTERACTIVE PORTFOLIO ENHANCEMENTS
-// ============================================
-
-(function() {
-    'use strict';
+    </section>
     
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Apply to sections when DOM is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        // Observe all sections, project cards, and publications
-        const elements = document.querySelectorAll('.section, .project-card, .pub-item, .exp-item, .edu-row');
-        elements.forEach((el, index) => {
-            // Stagger the animations
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-            observer.observe(el);
-        });
+    <!-- Publications -->
+    <section id="publications">
+        <div class="section-header reveal">
+            <div class="section-badge">RESEARCH</div>
+            <h2 class="section-title">Publications</h2>
+            <p class="section-description">
+                4 SCI-indexed papers in Q1 journals (IF up to 7.1)
+            </p>
+        </div>
         
-        // Add click ripple effect to interactive elements
-        const rippleElements = document.querySelectorAll('.skill-tag, .tech-tag, .stat-item, .contact-item');
-        rippleElements.forEach(el => {
-            el.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    border-radius: 50%;
-                    background: rgba(255, 255, 255, 0.5);
-                    left: ${x}px;
-                    top: ${y}px;
-                    pointer-events: none;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out;
-                `;
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
+        <div class="publications-list">
+            <div class="publication reveal">
+                <h3 class="pub-title">
+                    <a href="https://doi.org/10.1016/j.seta.2025.104264" target="_blank">
+                        Machine learning assisted revelation of the best performing single hetero-junction thermophotovoltaic cell
+                    </a>
+                </h3>
+                <p class="pub-journal">Sustainable Energy Technologies and Assessments, 2025</p>
+                <div class="pub-badges">
+                    <span class="pub-badge">Q1 Journal</span>
+                    <span class="pub-badge">IF 7.1</span>
+                </div>
+            </div>
+            
+            <div class="publication reveal">
+                <h3 class="pub-title">
+                    <a href="https://doi.org/10.1016/j.solener.2024.112870" target="_blank">
+                        Machine Learning-Enabled Performance Exploration of AuCuSe₄ in Thermophotovoltaic Cell
+                    </a>
+                </h3>
+                <p class="pub-journal">Solar Energy, 2024</p>
+                <div class="pub-badges">
+                    <span class="pub-badge">Q1 Journal</span>
+                    <span class="pub-badge">IF 6.0</span>
+                </div>
+            </div>
+            
+            <div class="publication reveal">
+                <h3 class="pub-title">
+                    <a href="https://doi.org/10.14569/IJACSA.2024.01507126" target="_blank">
+                        Unleashing the Power of Open-Source Transformers in Medical Imaging
+                    </a>
+                </h3>
+                <p class="pub-journal">Int'l Journal of Advanced Computer Science & Applications, 2024</p>
+                <div class="pub-badges">
+                    <span class="pub-badge">SCI-Indexed</span>
+                </div>
+            </div>
+            
+            <div class="publication reveal">
+                <h3 class="pub-title">
+                    <a href="https://doi.org/10.1016/j.heliyon.2023.e19011" target="_blank">
+                        Numerical studies on a ternary AgInTe₂ chalcopyrite thin film solar cell
+                    </a>
+                </h3>
+                <p class="pub-journal">Heliyon (Cell Press), 2023</p>
+                <div class="pub-badges">
+                    <span class="pub-badge">Q1 Journal</span>
+                    <span class="pub-badge">IF 4.0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header reveal">
+            <div class="section-badge">GET IN TOUCH</div>
+            <h2 class="section-title">Let's Build Together</h2>
+            <p class="section-description">
+                Ready to transform your AI vision into production-grade reality
+            </p>
+        </div>
         
-        // Dynamic glow effect on project cards
-        if (window.innerWidth >= 768) {
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = ((e.clientX - rect.left) / rect.width) * 100;
-                    const y = ((e.clientY - rect.top) / rect.height) * 100;
-                    card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(13, 115, 119, 0.08), #f8f9fa 50%)`;
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.background = '#f8f9fa';
-                });
-            });
+        <div class="contact-grid">
+            <div class="contact-card reveal">
+                <div class="contact-icon">📧</div>
+                <h3 class="contact-label">Email</h3>
+                <p class="contact-value">
+                    <a href="mailto:Joy.apee@gmail.com">Joy.apee@gmail.com</a>
+                </p>
+            </div>
+            
+            <div class="contact-card reveal">
+                <div class="contact-icon">📱</div>
+                <h3 class="contact-label">Phone</h3>
+                <p class="contact-value">+880 1521 417908</p>
+            </div>
+            
+            <div class="contact-card reveal">
+                <div class="contact-icon">💼</div>
+                <h3 class="contact-label">LinkedIn</h3>
+                <p class="contact-value">
+                    <a href="https://linkedin.com/in/arifuzzaman-joy-ru" target="_blank">arifuzzaman-joy-ru</a>
+                </p>
+            </div>
+            
+            <div class="contact-card reveal">
+                <div class="contact-icon">💻</div>
+                <h3 class="contact-label">GitHub</h3>
+                <p class="contact-value">
+                    <a href="https://github.com/Arifuzzamanjoy" target="_blank">@Arifuzzamanjoy</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/Arifuzzamanjoy" target="_blank" class="social-link">💻</a>
+                <a href="https://linkedin.com/in/arifuzzaman-joy-ru" target="_blank" class="social-link">💼</a>
+                <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ" target="_blank" class="social-link">📚</a>
+                <a href="https://researchgate.net/profile/Arifuzzaman-Joy" target="_blank" class="social-link">🔬</a>
+            </div>
+            <p class="copyright">
+                © 2026 Arifuzzaman Joy. Designed & Built with ❤️
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
         }
         
-        // Smooth scroll for anchor links
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+        
+        // Active Navigation Highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
         
-        // Stats counter animation
-        const statsNumbers = document.querySelectorAll('.stat-number');
-        const animateCounter = (element) => {
-            const target = element.textContent.trim();
-            if (target.includes('+') || target.includes('×') || target.includes('%')) {
-                // Extract number
-                const match = target.match(/\d+/);
-                if (match) {
-                    const num = parseInt(match[0]);
-                    const suffix = target.replace(/\d+/, '');
-                    let current = 0;
-                    const increment = num / 30;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= num) {
-                            element.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            element.textContent = Math.floor(current) + suffix;
-                        }
-                    }, 50);
+        // Counter Animation for Stats
+        function animateValue(element, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
                 }
-            }
-        };
-        
-        // Trigger counter animation when stats bar is visible
-        const statsBar = document.querySelector('.stats-bar');
-        if (statsBar) {
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        statsNumbers.forEach(stat => animateCounter(stat));
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            statsObserver.observe(statsBar);
-        }
-    });
-    
-    // Add ripple animation CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
+            };
+            window.requestAnimationFrame(step);
         }
         
-        /* Print styles - disable animations */
-        @media print {
-            *, *::before, *::after {
-                animation-duration: 0s !important;
-                transition-duration: 0s !important;
-            }
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.stat-number');
+                    stats.forEach(stat => {
+                        const text = stat.textContent;
+                        if (text.includes('%')) {
+                            animateValue(stat, 0, parseInt(text), 2000, '%');
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) {
+            statsObserver.observe(heroStats);
         }
-    `;
-    document.head.appendChild(style);
-    
-})();
-</script>
-
+    </script>
 </body>
 </html>
 
