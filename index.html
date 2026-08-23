@@ -1,1515 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arifuzzaman Joy | AI/ML Engineer & MLOps Specialist</title>
-    <meta name="description" content="AI/ML Engineer specializing in production-grade Generative AI, Multi-Agent Systems, and MLOps. 6+ years building scalable ML systems with proven cost savings and performance gains.">
-    <meta name="keywords" content="AI Engineer, MLOps, Machine Learning, Generative AI, LLM, RAG, Computer Vision, Python, PyTorch, TensorFlow">
-    <meta name="author" content="Arifuzzaman Joy">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://arifuzzamanjoy.github.io/">
-    
-    <!-- Open Graph / Social Preview -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://arifuzzamanjoy.github.io/">
-    <meta property="og:title" content="Arifuzzaman Joy - AI/ML Engineer & MLOps Specialist">
-    <meta property="og:description" content="Building production-grade AI systems with 60% cost savings and 3-7× performance improvements. Featured researcher in Gen-Verse LatentMAS.">
-    <meta property="og:image" content="https://arifuzzamanjoy.github.io/favicon.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://arifuzzamanjoy.github.io/">
-    <meta name="twitter:title" content="Arifuzzaman Joy - AI/ML Engineer & MLOps Specialist">
-    <meta name="twitter:description" content="Building production-grade AI systems with proven cost savings and performance improvements.">
-    <meta name="twitter:image" content="https://arifuzzamanjoy.github.io/favicon.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
-    <link rel="shortcut icon" type="image/jpeg" href="/favicon.jpg">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
-    
-    <style>
-        :root {
-            --primary: #0D7377;
-            --primary-dark: #095555;
-            --secondary: #E07A5F;
-            --text: #e4e4e4;
-            --text-muted: #a0a0a0;
-            --bg: #0f0f1e;
-            --bg-light: #1a1a2e;
-            --card: #16213e;
-            --border: rgba(13, 115, 119, 0.2);
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 15, 30, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 2rem;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9375rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a:focus {
-            color: var(--primary);
-            outline: none;
-        }
-        
-        .nav-links a:hover::after,
-        .nav-links a:focus::after {
-            width: 100%;
-        }
-        
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-        }
-        
-        .mobile-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--text);
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 2rem 6rem;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            text-align: center;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: rgba(13, 115, 119, 0.15);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-        
-        .gradient-text {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-        
-        .hero-description {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.7;
-        }
-        
-        .proof-strip {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin: 2rem 0 2.5rem;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .proof-item {
-            text-align: center;
-        }
-        
-        .proof-number {
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-        
-        .proof-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 0.25rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 0.875rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-        }
-        
-        .btn-primary:hover,
-        .btn-primary:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(13, 115, 119, 0.4);
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-        
-        .btn-secondary:hover,
-        .btn-secondary:focus {
-            border-color: var(--primary);
-            color: var(--primary);
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-badge {
-            display: inline-block;
-            background: rgba(13, 115, 119, 0.15);
-            color: var(--primary);
-            padding: 0.375rem 0.875rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-        }
-        
-        .section-description {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Featured Project */
-        .featured-project {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .project-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-        
-        .badge {
-            background: rgba(13, 115, 119, 0.2);
-            color: var(--primary);
-            padding: 0.375rem 0.875rem;
-            border-radius: 6px;
-            font-size: 0.8125rem;
-            font-weight: 600;
-        }
-        
-        .badge-special {
-            background: linear-gradient(135deg, rgba(13, 115, 119, 0.3), rgba(224, 122, 95, 0.3));
-            color: #fff;
-        }
-        
-        .project-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        
-        .project-description {
-            font-size: 1.0625rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-        
-        .project-highlights h4 {
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-        
-        .project-highlights ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .project-highlights li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        
-        .project-highlights li:last-child {
-            border-bottom: none;
-        }
-        
-        .project-highlights strong {
-            color: var(--text);
-        }
-        
-        .project-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .metric-card {
-            background: rgba(13, 115, 119, 0.1);
-            padding: 1.25rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid var(--border);
-        }
-        
-        .metric-value {
-            display: block;
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.25rem;
-        }
-        
-        .metric-label {
-            display: block;
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 2rem 0;
-        }
-        
-        .tech-tag {
-            background: rgba(13, 115, 119, 0.15);
-            color: var(--primary);
-            padding: 0.375rem 0.875rem;
-            border-radius: 6px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            border: 1px solid var(--border);
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .project-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(13, 115, 119, 0.2);
-            border-color: var(--primary);
-        }
-        
-        .card-year {
-            display: inline-block;
-            background: rgba(13, 115, 119, 0.2);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            color: var(--text);
-        }
-        
-        .card-description {
-            font-size: 0.9375rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .card-description strong {
-            color: var(--primary);
-        }
-        
-        /* Experience Section */
-        .experience-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .experience-item {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--primary);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .experience-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-        
-        .experience-company {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-top: 0.25rem;
-        }
-        
-        .experience-period {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-        }
-        
-        .experience-description {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        
-        .experience-description ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        
-        .experience-description li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .experience-description li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-        
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .skill-category {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(13, 115, 119, 0.15);
-            border-color: var(--primary);
-        }
-        
-        .skill-name {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .skill-item {
-            background: rgba(13, 115, 119, 0.1);
-            color: var(--text-muted);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        /* Publications */
-        .publications-list {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .publication {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--primary);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .publication:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 24px rgba(13, 115, 119, 0.15);
-        }
-        
-        .pub-title {
-            font-size: 1.0625rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .pub-title a {
-            color: var(--text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .pub-title a:hover,
-        .pub-title a:focus {
-            color: var(--primary);
-            outline: none;
-        }
-        
-        .pub-journal {
-            color: var(--text-muted);
-            font-size: 0.9375rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .pub-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .pub-badge {
-            background: rgba(212, 165, 116, 0.2);
-            color: #D4A574;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-card {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(13, 115, 119, 0.2);
-            border-color: var(--primary);
-        }
-        
-        .contact-label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-            font-size: 1.0625rem;
-        }
-        
-        .contact-value {
-            color: var(--text-muted);
-        }
-        
-        .contact-value a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-value a:hover,
-        .contact-value a:focus {
-            color: var(--secondary);
-            outline: none;
-            text-decoration: underline;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--bg-light);
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .social-link {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            background: rgba(13, 115, 119, 0.1);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .social-link:hover,
-        .social-link:focus {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-        
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-        
-        .copyright a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .copyright a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav .container {
-                padding: 1rem;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(15, 15, 30, 0.98);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
-                transition: left 0.3s ease;
-                overflow-y: auto;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .mobile-toggle {
-                display: flex;
-            }
-            
-            .hero {
-                padding-top: 6rem;
-            }
-            
-            .proof-strip {
-                gap: 2rem;
-            }
-            
-            section {
-                padding: 3rem 1rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-metrics {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            z-index: 10000;
-        }
-        
-        .skip-link:focus {
-            top: 0;
-        }
-        
-        /* Performance - Lazy Load Sections */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arifuzzaman Joy — LLM &amp; GPU infrastructure</title>
+<meta name="description" content="I put LLM and AI-agent systems into production on serverless and rented GPUs. Freelance LLM infrastructure, RAG, multi-agent systems, and GPU deployment.">
+<link rel="icon" href="favicon.jpg">
+<meta property="og:title" content="Arifuzzaman Joy — LLM &amp; GPU infrastructure">
+<meta property="og:description" content="I put LLM and AI-agent systems into production on serverless and rented GPUs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arifuzzamanjoy.github.io/">
+<link rel="canonical" href="https://arifuzzamanjoy.github.io/">
+<style>
+:root{
+  --bg:#fdfcfa; --fg:#1a1a18; --muted:#5f5d58; --rule:#e2ded6;
+  --accent:#0d5c5f; --accent-soft:#f0f5f4; --card:#f7f5f1;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14151a; --fg:#e8e6e1; --muted:#9b978e; --rule:#2b2d34;
+    --accent:#5fb0b3; --accent-soft:#1a2426; --card:#1b1d23;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:0 24px;
+}
+.wrap{max-width:720px;margin:0 auto;padding:64px 0 96px}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:600;line-height:1.25}
+h1{font-size:2.1rem;margin:0 0 .3em;letter-spacing:-.01em}
+h2{font-size:1.32rem;margin:3.4em 0 .9em;padding-bottom:.35em;border-bottom:1px solid var(--rule)}
+h3{font-size:1.06rem;margin:2.2em 0 .5em}
+p{margin:0 0 1.1em}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+a:hover{border-bottom-color:var(--accent)}
+.lede{font-size:1.16rem;color:var(--fg)}
+.sub{color:var(--muted);font-size:.97rem;margin:0 0 2em}
+.sub a{color:var(--muted);border-bottom-color:var(--rule)}
+.sub a:hover{color:var(--accent)}
+
+.cta{
+  display:inline-block;background:var(--accent);color:var(--bg);
+  padding:11px 20px;border-radius:5px;border:0;font-weight:600;font-size:.97rem;
+}
+.cta:hover{opacity:.88;border:0}
+@media (prefers-color-scheme:dark){.cta{color:#12141a}}
+
+.proof{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:6px 20px;margin:2em 0}
+.proof dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
+.proof dt{padding:13px 0;font-weight:600;font-size:.95rem;border-bottom:1px solid var(--rule)}
+.proof dd{padding:13px 0 13px 18px;margin:0;color:var(--muted);font-size:.92rem;border-bottom:1px solid var(--rule);text-align:right}
+.proof dt:last-of-type,.proof dd:last-of-type{border-bottom:0}
+
+ul{padding-left:1.15em;margin:0 0 1.1em}
+li{margin-bottom:.5em}
+
+.case{margin:0 0 2.6em}
+.case h3{margin-bottom:.15em}
+.case .meta{color:var(--muted);font-size:.87rem;margin:0 0 .8em;font-variant-numeric:tabular-nums}
+
+table{width:100%;border-collapse:collapse;font-size:.94rem;margin:0 0 1.4em}
+th{text-align:left;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;
+   color:var(--muted);padding:0 12px 8px 0;border-bottom:1px solid var(--rule)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child,th:last-child{padding-right:0;color:var(--muted)}
+.tw{width:34%}
+
+details{margin:.6em 0 1.4em;font-size:.95rem}
+summary{cursor:pointer;color:var(--muted)}
+summary:hover{color:var(--accent)}
+
+footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
+.note{color:var(--muted);font-size:.86rem}
+
+@media (max-width:560px){
+  body{padding:0 18px;font-size:16px}
+  .wrap{padding:44px 0 64px}
+  h1{font-size:1.75rem}
+  .proof dl{grid-template-columns:1fr}
+  .proof dd{text-align:left;padding:0 0 13px;border-bottom:1px solid var(--rule)}
+  .proof dt{border-bottom:0;padding-bottom:3px}
+  .tw{width:auto}
+}
+</style>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-    
-    <!-- Navigation -->
-    <nav role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="logo" aria-label="Arifuzzaman Joy">AJ</div>
-            <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#publications">Research</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/read">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">Featured Researcher • Gen-Verse LatentMAS</div>
-            <h1>
-                Production-Grade<br>
-                <span class="gradient-text">AI & MLOps Systems</span>
-            </h1>
-            <p class="hero-subtitle">Arifuzzaman Joy — AI/ML Engineer & MLOps Specialist</p>
-            <p class="hero-description">
-                Delivering scalable AI systems with measurable business impact. Specialized in Generative AI, 
-                Multi-Agent Systems, and cloud-native ML infrastructure. 6+ years transforming research into production.
-            </p>
-            
-            <div class="proof-strip">
-                <div class="proof-item">
-                    <span class="proof-number">7</span>
-                    <span class="proof-label">Publications</span>
-                </div>
-                <div class="proof-item">
-                    <span class="proof-number">6+</span>
-                    <span class="proof-label">Years Experience</span>
-                </div>
-                <div class="proof-item">
-                    <span class="proof-number">15+</span>
-                    <span class="proof-label">Production Systems</span>
-                </div>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Work</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <main id="main">
-    <section id="projects">
-        <div class="section-header reveal">
-            <div class="section-badge">Case Studies</div>
-            <h2 class="section-title">Selected Projects</h2>
-            <p class="section-description">
-                Production-grade AI systems with proven performance improvements and cost savings
-            </p>
-        </div>
-        
-        <div class="featured-project reveal">
-            <div class="project-badges">
-                <span class="badge badge-special">Featured in Gen-Verse Repository</span>
-                <span class="badge">arXiv:2511.20639</span>
-                <span class="badge">HuggingFace #1 Paper of Day</span>
-            </div>
-            
-            <h3 class="project-title">LatentMAS-SLoRA: Multi-Agent Reasoning with S-LoRA</h3>
-            
-            <p class="project-description">
-                Multi-agent framework enabling collaboration in latent space rather than token space, 
-                augmented with role-specialized LoRA adapters. Featured as 1 of 5 community extensions 
-                in the official Gen-Verse LatentMAS repository (766+ stars).
-            </p>
-            
-            <div class="project-highlights">
-                <h4>Technical Approach</h4>
-                <ul>
-                    <li><strong>Latent Collaboration:</strong> Agents communicate via hidden states, reducing token usage by 50-80% and achieving 3-7× speedup</li>
-                    <li><strong>S-LoRA Integration:</strong> Four specialized adapters (Medical, Reward, Comics, Detection) with dynamic hot-swapping</li>
-                    <li><strong>Multimodal Support:</strong> Qwen2.5-VL-7B-Instruct foundation with vision-language reasoning</li>
-                    <li><strong>Production Infrastructure:</strong> RunPod serverless deployment with Docker, CI/CD, and 200ms latency per agent</li>
-                    <li><strong>Advanced RAG:</strong> Document injection via URL, base64, JSON with domain-aware routing</li>
-                </ul>
-            </div>
-            
-            <div class="project-metrics">
-                <div class="metric-card">
-                    <span class="metric-value">75%</span>
-                    <span class="metric-label">VRAM Reduction</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value">40%</span>
-                    <span class="metric-label">Latency Decrease</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value">50-80%</span>
-                    <span class="metric-label">Token Reduction</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value">3-7×</span>
-                    <span class="metric-label">Speedup</span>
-                </div>
-            </div>
-            
-            <div class="project-tech">
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">Qwen2.5-VL-7B</span>
-                <span class="tech-tag">S-LoRA</span>
-                <span class="tech-tag">PEFT</span>
-                <span class="tech-tag">vLLM</span>
-                <span class="tech-tag">RunPod</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">CI/CD</span>
-            </div>
-            
-            <div class="project-links">
-                <a href="https://github.com/Arifuzzamanjoy/latent_mas_slora" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    View Code
-                </a>
-                <a href="https://www.youtube.com/watch?v=g7sxYjwgRRk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    Watch Demo
-                </a>
-                <a href="https://arxiv.org/abs/2511.20639" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    Read Paper
-                </a>
-            </div>
-        </div>
-        
-        <!-- Other Projects Grid -->
-        <div class="projects-grid">
-            <div class="project-card reveal">
-                <div class="card-year">2025</div>
-                <h3 class="card-title">AI Calling Agent Platform</h3>
-                <p class="card-description">
-                    Real-time voice conversation platform with SIP/WebRTC telephony integration. 
-                    Achieved <strong>sub-500ms latency</strong> with emotionally expressive speech synthesis.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">LiveKit</span>
-                    <span class="tech-tag">GPT-4</span>
-                    <span class="tech-tag">WebRTC</span>
-                    <span class="tech-tag">RunPod</span>
-                </div>
-            </div>
-            
-            <div class="project-card reveal">
-                <div class="card-year">2025</div>
-                <h3 class="card-title">Multi-GPU Video Generation</h3>
-                <p class="card-description">
-                    Distributed inference pipeline for state-of-the-art video generation (text-to-video, image-to-video, speech-to-video). 
-                    Achieved <strong>3× throughput increase</strong> using FSDP on serverless GPU clusters.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">PyTorch</span>
-                    <span class="tech-tag">FSDP</span>
-                    <span class="tech-tag">Modal</span>
-                    <span class="tech-tag">DiT</span>
-                </div>
-            </div>
-            
-            <div class="project-card reveal">
-                <div class="card-year">2024</div>
-                <h3 class="card-title">Custom LoRA Training Pipeline</h3>
-                <p class="card-description">
-                    Self-hosted Flux.1 Dev with custom LoRA fine-tuning infrastructure. 
-                    Delivered <strong>80% cost reduction</strong> for client photography workflows.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Flux</span>
-                    <span class="tech-tag">LoRA</span>
-                    <span class="tech-tag">Gradio</span>
-                    <span class="tech-tag">Modal</span>
-                </div>
-            </div>
-            
-            <div class="project-card reveal">
-                <div class="card-year">2024</div>
-                <h3 class="card-title">Enterprise RAG System</h3>
-                <p class="card-description">
-                    Multi-modal retrieval-augmented generation with vector search and semantic chunking. 
-                    Achieved <strong>40% accuracy improvement</strong> over baseline implementation.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">LangChain</span>
-                    <span class="tech-tag">Pinecone</span>
-                    <span class="tech-tag">GPT-4</span>
-                    <span class="tech-tag">FastAPI</span>
-                </div>
-            </div>
-            
-            <div class="project-card reveal">
-                <div class="card-year">2024</div>
-                <h3 class="card-title">Voice-Pro: Speech Processing Platform</h3>
-                <p class="card-description">
-                    Web application for speech recognition, translation, and voice cloning across <strong>100+ languages</strong>. 
-                    Supports YouTube processing and real-time translation.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Whisper</span>
-                    <span class="tech-tag">F5-TTS</span>
-                    <span class="tech-tag">Deep-Translator</span>
-                    <span class="tech-tag">Python</span>
-                </div>
-            </div>
-            
-            <div class="project-card reveal">
-                <div class="card-year">2024</div>
-                <h3 class="card-title">Medical Imaging with Transformers</h3>
-                <p class="card-description">
-                    Brain tumor classification and segmentation using ConvNeXt V2 and SegFormer. 
-                    Achieved <strong>99.6% diagnostic accuracy</strong> on evaluation dataset.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">PyTorch</span>
-                    <span class="tech-tag">ConvNeXt V2</span>
-                    <span class="tech-tag">SegFormer</span>
-                    <span class="tech-tag">Transformers</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Experience Section -->
-    <section id="experience" style="background: var(--bg-light);">
-        <div class="section-header reveal">
-            <div class="section-badge">Career</div>
-            <h2 class="section-title">Professional Experience</h2>
-            <p class="section-description">
-                Building production AI systems and conducting applied research
-            </p>
-        </div>
-        
-        <div class="experience-list">
-            <div class="experience-item reveal">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="experience-title">AI & Machine Learning Engineer</h3>
-                        <p class="experience-company">Freelance — Multiple Clients</p>
-                    </div>
-                    <p class="experience-period">2023 — Present</p>
-                </div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Develop and deploy cutting-edge ML/AI models specializing in multi-modal tasks including image generation, video synthesis, NLP, and voice AI</li>
-                        <li>Design and implement serverless GPU infrastructure with Docker and Kubernetes, achieving 60%+ cost reduction</li>
-                        <li>Build production RAG systems and multi-agent frameworks with measurable performance improvements</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="experience-item reveal">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="experience-title">Research Assistant</h3>
-                        <p class="experience-company">Rajshahi University — Solar Lab / AI Lab</p>
-                    </div>
-                    <p class="experience-period">Mar 2022 — May 2023</p>
-                </div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Conducted research on renewable energy (solar cells) and speech processing using ML/DL techniques</li>
-                        <li>Applied machine learning to analyze simulation data and improve photovoltaic performance</li>
-                        <li>Published 4 peer-reviewed papers in Q1 journals with impact factors up to 7.1</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-header reveal">
-            <div class="section-badge">Technical Expertise</div>
-            <h2 class="section-title">Skills & Technologies</h2>
-            <p class="section-description">
-                Full-stack ML engineering with production-grade tools and frameworks
-            </p>
-        </div>
-        
-        <div class="skills-grid">
-            <div class="skill-category reveal">
-                <h3 class="skill-name">AI & Machine Learning</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Generative AI</span>
-                    <span class="skill-item">LLMs</span>
-                    <span class="skill-item">Multi-Agent Systems</span>
-                    <span class="skill-item">Deep Learning</span>
-                    <span class="skill-item">NLP</span>
-                    <span class="skill-item">Computer Vision</span>
-                    <span class="skill-item">RAG</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal">
-                <h3 class="skill-name">MLOps & Cloud</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Docker</span>
-                    <span class="skill-item">Kubernetes</span>
-                    <span class="skill-item">CI/CD</span>
-                    <span class="skill-item">AWS</span>
-                    <span class="skill-item">Azure ML</span>
-                    <span class="skill-item">Monitoring</span>
-                    <span class="skill-item">Logging</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal">
-                <h3 class="skill-name">Frameworks & Tools</h3>
-                <div class="skill-list">
-                    <span class="skill-item">PyTorch</span>
-                    <span class="skill-item">TensorFlow</span>
-                    <span class="skill-item">HuggingFace</span>
-                    <span class="skill-item">LangChain</span>
-                    <span class="skill-item">vLLM</span>
-                    <span class="skill-item">FastAPI</span>
-                    <span class="skill-item">Gradio</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal">
-                <h3 class="skill-name">Serverless GPU</h3>
-                <div class="skill-list">
-                    <span class="skill-item">RunPod</span>
-                    <span class="skill-item">Modal</span>
-                    <span class="skill-item">Replicate</span>
-                    <span class="skill-item">Lambda Labs</span>
-                    <span class="skill-item">FSDP</span>
-                    <span class="skill-item">DeepSpeed</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal">
-                <h3 class="skill-name">Languages</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Python</span>
-                    <span class="skill-item">SQL</span>
-                    <span class="skill-item">JavaScript</span>
-                    <span class="skill-item">Bash</span>
-                    <span class="skill-item">MATLAB</span>
-                </div>
-            </div>
-            
-            <div class="skill-category reveal">
-                <h3 class="skill-name">LLMs & Models</h3>
-                <div class="skill-list">
-                    <span class="skill-item">GPT-4</span>
-                    <span class="skill-item">Claude</span>
-                    <span class="skill-item">Llama</span>
-                    <span class="skill-item">Qwen</span>
-                    <span class="skill-item">Flux</span>
-                    <span class="skill-item">LoRA/QLoRA</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Publications -->
-    <section id="publications" style="background: var(--bg-light);">
-        <div class="section-header reveal">
-            <div class="section-badge">Research</div>
-            <h2 class="section-title">Publications</h2>
-            <p class="section-description">
-                7 peer-reviewed publications • 4 Q1 journals (IF up to 7.1) • 
-                <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">Google Scholar Profile</a>
-            </p>
-        </div>
-        
-        <div class="publications-list">
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    <a href="https://doi.org/10.1016/j.seta.2025.104264" target="_blank" rel="noopener noreferrer">
-                        Machine learning assisted revelation of the best performing single hetero-junction thermophotovoltaic cell
-                    </a>
-                </h3>
-                <p class="pub-journal">Sustainable Energy Technologies and Assessments, 2025</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">Q1</span>
-                    <span class="pub-badge">IF 7.1</span>
-                </div>
-            </div>
-            
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    <a href="https://doi.org/10.1016/j.solener.2024.112870" target="_blank" rel="noopener noreferrer">
-                        Machine Learning-Enabled Performance Exploration of AuCuSe₄ in Thermophotovoltaic Cell
-                    </a>
-                </h3>
-                <p class="pub-journal">Solar Energy, 2024</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">Q1</span>
-                    <span class="pub-badge">IF 6.0</span>
-                </div>
-            </div>
-            
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    <a href="https://doi.org/10.14569/IJACSA.2024.01507126" target="_blank" rel="noopener noreferrer">
-                        Unleashing the Power of Open-Source Transformers in Medical Imaging
-                    </a>
-                </h3>
-                <p class="pub-journal">Int'l Journal of Advanced Computer Science & Applications, 2024</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">SCI-Indexed</span>
-                    <span class="pub-badge">99.6% Accuracy</span>
-                </div>
-            </div>
-            
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    <a href="https://doi.org/10.1016/j.heliyon.2023.e19011" target="_blank" rel="noopener noreferrer">
-                        Numerical studies on a ternary AgInTe₂ chalcopyrite thin film solar cell
-                    </a>
-                </h3>
-                <p class="pub-journal">Heliyon (Cell Press), 2023</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">Q1</span>
-                    <span class="pub-badge">IF 4.0</span>
-                </div>
-            </div>
-            
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    Numerical prediction on the photovoltaic performance of CZTS-based thin film solar cell
-                </h3>
-                <p class="pub-journal">Nano Select, 2023</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">Scopus</span>
-                </div>
-            </div>
-            
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    Spectrum estimation for voiced speech using average weighted linear prediction
-                </h3>
-                <p class="pub-journal">2024</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">Speech Processing</span>
-                </div>
-            </div>
-            
-            <div class="publication reveal">
-                <h3 class="pub-title">
-                    Enhancement of Bone Conducted Speech Using Deep Transfer Learning
-                </h3>
-                <p class="pub-journal">2024</p>
-                <div class="pub-badges">
-                    <span class="pub-badge">Deep Learning</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-header reveal">
-            <div class="section-badge">Contact</div>
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-description">
-                Open to AI/ML Engineering roles, MLOps consulting, and collaborative research projects
-            </p>
-        </div>
-        
-        <div class="contact-grid">
-            <div class="contact-card reveal">
-                <h3 class="contact-label">Email</h3>
-                <p class="contact-value">
-                    <a href="mailto:Joy.apee@gmail.com">Joy.apee@gmail.com</a>
-                </p>
-            </div>
-            
-            <div class="contact-card reveal">
-                <h3 class="contact-label">Phone</h3>
-                <p class="contact-value">+880 1521 417908</p>
-            </div>
-            
-            <div class="contact-card reveal">
-                <h3 class="contact-label">LinkedIn</h3>
-                <p class="contact-value">
-                    <a href="https://linkedin.com/in/arifuzzaman-joy-ru" target="_blank" rel="noopener noreferrer">arifuzzaman-joy-ru</a>
-                </p>
-            </div>
-            
-            <div class="contact-card reveal">
-                <h3 class="contact-label">GitHub</h3>
-                <p class="contact-value">
-                    <a href="https://github.com/Arifuzzamanjoy" target="_blank" rel="noopener noreferrer">@Arifuzzamanjoy</a>
-                </p>
-            </div>
-        </div>
-    </section>
-    </main>
-    
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://github.com/Arifuzzamanjoy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="GitHub">GH</a>
-                <a href="https://linkedin.com/in/arifuzzaman-joy-ru" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="LinkedIn">LI</a>
-                <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Scholar" title="Google Scholar">GS</a>
-                <a href="https://researchgate.net/profile/Arifuzzaman-Joy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="ResearchGate" title="ResearchGate">RG</a>
-                <a href="https://huggingface.co/Joyapeee" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="HuggingFace" title="HuggingFace">HF</a>
-                <a href="https://orcid.org/0009-0005-2420-6585" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="ORCID" title="ORCID">OR</a>
-            </div>
-            <p class="copyright">
-                © 2026 Arifuzzaman Joy. All rights reserved. • 
-                <a href="/read">Blog</a> • 
-                <a href="https://github.com/Arifuzzamanjoy/Arifuzzamanjoy.github.io" target="_blank" rel="noopener noreferrer">View Source</a>
-            </p>
-        </div>
-    </footer>
-    
-    <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const toggleBtn = document.querySelector('.mobile-toggle');
-            const isActive = navLinks.classList.toggle('active');
-            toggleBtn.setAttribute('aria-expanded', isActive.toString());
-        }
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-                document.querySelector('.mobile-toggle').setAttribute('aria-expanded', 'false');
-            });
-        });
-        
-        // Scroll Reveal Animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            const windowHeight = window.innerHeight;
-            const elementVisible = 100;
-            
-            reveals.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
-        
-        // Active Navigation Highlight
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                    link.setAttribute('aria-current', 'page');
-                } else {
-                    link.removeAttribute('aria-current');
-                }
-            });
-        });
-        
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Performance: Intersection Observer for lazy reveal
-        if ('IntersectionObserver' in window) {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        }
-    </script>
+<div class="wrap">
+
+<h1>Arifuzzaman Joy</h1>
+<p class="lede">I put LLM and AI-agent systems into production on serverless and rented GPUs, for a fraction of what the managed APIs cost.</p>
+<p class="sub">
+  Freelance, based in Bangladesh, working remotely ·
+  <a href="mailto:joy.apee@gmail.com">Email</a> ·
+  <a href="https://github.com/Arifuzzamanjoy">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/arifuzzaman-joy-ru/">LinkedIn</a> ·
+  <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
+  <a href="https://huggingface.co/Joyapeee">Hugging Face</a>
+</p>
+
+<p><a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a></p>
+
+<p>I started out simulating solar cells in a university physics lab and ended up making GPUs behave. The through line is the same either way: someone has a model that works in theory, and it has to survive contact with real hardware.</p>
+
+<p>Most of what I do now is unglamorous. The Dockerfile that builds on the first try. The installer that survives a Vast.ai box shipping the wrong CUDA driver. The health check that had been quietly dropping half your services since March and nobody noticed. I still publish research, which mostly means I can read a paper on Monday and have it deployed by Friday instead of bookmarking it and feeling good about myself.</p>
+
+<h2>Things you can verify</h2>
+
+<div class="proof">
+<dl>
+  <dt><a href="https://github.com/Osmantic/ODS/pulls?q=is%3Apr+author%3AArifuzzamanjoy">14 pull requests merged into ODS</a></dt>
+  <dd>4.6k-star self-hosted AI server platform</dd>
+  <dt><a href="https://github.com/casys-kaist/LLMServingSim/pull/59">Merged into LLMServingSim</a></dt>
+  <dd>LLM-serving simulator, KAIST research lab</dd>
+  <dt><a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">Featured extension in Gen-Verse/LatentMAS</a></dt>
+  <dd>official repo of an ICML 2026 Spotlight paper</dd>
+  <dt><a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">5 peer-reviewed papers, 75 citations</a></dt>
+  <dd>h-index 5</dd>
+</dl>
+</div>
+
+<h2>What people hire me for</h2>
+
+<ul>
+  <li><strong>Serverless GPU deployment</strong> on RunPod, Modal, or Vast.ai. Dockerized endpoints, CI/CD, autoscaled down to near-zero idle cost.</li>
+  <li><strong>RAG and document pipelines that can prove they work.</strong> Retrieval, citation tracking, multi-hop reasoning, and LLM-as-judge evaluation, so "it feels better" turns into a number you can put in a report.</li>
+  <li><strong>Multi-agent systems</strong>, including latent-space designs where agents pass hidden states instead of burning tokens regenerating text.</li>
+  <li><strong>Hot-swappable LoRA serving</strong> off a single base model, routed by domain. I train the adapters too.</li>
+  <li><strong>Rescuing deployments that almost work.</strong> Multi-GPU OOM, driver mismatch, topology-aware placement, fitting a model onto a card that shouldn't hold it.</li>
+</ul>
+
+<h2>Selected work</h2>
+
+<div class="case">
+<h3><a href="https://github.com/Osmantic/ODS/pull/1343">Health checks that don't lie</a></h3>
+<p class="meta">ODS · open source · Python, JSON Schema, Bash</p>
+<p>ODS assumed every service spoke HTTP. Anything exposing only TCP or a CLI failed its health check, got marked dead, and vanished from the dashboard without an error anyone would ever see. Silent data loss, essentially, but for services.</p>
+<p>I threaded a <code>health_type: http|tcp|none</code> field through the entire stack: JSON schema, catalog generator, dashboard API, and the shell scripts underneath. The interesting part wasn't the feature. It was the migration. Dozens of existing service manifests had to keep working untouched, so the default had to infer correctly from what each one already declared.</p>
+<p class="note">Also merged in the same codebase: a <a href="https://github.com/Osmantic/ODS/pull/1664">node diagnostics endpoint</a> for runtime hardware introspection, <a href="https://github.com/Osmantic/ODS/pull/646">gpu_backends schema validation</a>, and <a href="https://github.com/Osmantic/ODS/pull/717">compatibility blocks across 25 manifests</a>.</p>
+</div>
+
+<div class="case">
+<h3><a href="https://github.com/Arifuzzamanjoy/latent_mas_slora">Agents that think without talking</a></h3>
+<p class="meta">LatentMAS-SLoRA · PyTorch, PEFT, Qwen2.5-VL, RunPod</p>
+<p>Multi-agent systems waste a lot of money re-serializing thoughts into English so the next agent can parse them back out. The LatentMAS paper (ICML 2026 Spotlight, <a href="https://arxiv.org/abs/2511.20639">arXiv:2511.20639</a>) showed you can skip that step and pass hidden states directly between agents.</p>
+<p>I extended it with role-specialized LoRA adapters that hot-swap at runtime, so one base model plays Planner, Critic, Refiner, and Judger without holding four sets of weights in VRAM. The Critic and Refiner never emit a token, roughly 200ms each. It ships with vision-language support on Qwen2.5-VL-7B, RAG integration, and a RunPod serverless deployment with CI/CD.</p>
+<p>The paper's authors added it to their README as <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">community extension #5</a>, alongside work from MIT's LAMM group. There's a <a href="https://www.youtube.com/watch?v=g7sxYjwgRRk">demo video</a>.</p>
+<p class="note">The README is equally clear about what it isn't: PEFT-based adapter management rather than true S-LoRA, with no custom CUDA paging kernels and no heterogeneous batching. Throughput benchmarks against vLLM S-LoRA are on the roadmap, not done. I'd rather you read that here than find it out on a call.</p>
+</div>
+
+<div class="case">
+<h3><a href="https://github.com/Osmantic/ODS/pull/983">Making rented GPUs behave</a></h3>
+<p class="meta">ODS · Bash, Docker Compose, Vast.ai</p>
+<p>GPU marketplaces hand you a box that is technically the card you paid for and broken in a dozen quiet ways. Wrong driver version, missing ACLs, a container runtime that was never wired up properly.</p>
+<p>I wrote a multi-phase hardened installer for it: <code>set -euo pipefail</code> throughout, hard-fail ACL checks, GPU-tier detection, and around 28 documented host-environment failure modes with the fix for each one. The documentation was most of the value here. Anyone can write the happy path.</p>
+</div>
+
+<div class="case">
+<h3><a href="https://github.com/Arifuzzamanjoy/gpu-broker-mcp">A broker so agents can rent their own GPUs</a></h3>
+<p class="meta">gpu-broker-mcp · MCP, Python, Streamable HTTP</p>
+<p>A stateless MCP server that lets an agent discover nodes, reserve capacity, dispatch inference, and poll for results through four tools, without ever handling SSH keys, node IPs, or provider APIs itself. Stateless by design, so there are no sessions to lose and no sticky routing to get wrong.</p>
+</div>
+
+<h2>Open source</h2>
+
+<p>I work in public. The fastest way to judge whether I'm any good is to read a diff.</p>
+
+<table>
+<tr><th class="tw">Project</th><th>Contribution</th></tr>
+<tr><td><a href="https://github.com/Osmantic/ODS">Osmantic/ODS</a> <span class="note">4.6k ★</span></td><td>23 PRs opened, 14 merged. Schema, dashboard API, health checks, GPU telemetry, installer toolkit.</td></tr>
+<tr><td><a href="https://github.com/kvcache-ai/ktransformers">ktransformers</a> <span class="note">19k ★</span></td><td>CPU feature-detection tests and a consumer-hardware config guide. In review.</td></tr>
+<tr><td><a href="https://github.com/casys-kaist/LLMServingSim">LLMServingSim</a> <span class="note">370 ★</span></td><td>RTX 4090 profile bundle with validation for Llama-3.1-8B. Merged.</td></tr>
+<tr><td><a href="https://github.com/Gen-Verse/LatentMAS">Gen-Verse/LatentMAS</a></td><td>LatentMAS-SLoRA listed as a community extension.</td></tr>
+</table>
+
+<h2>Projects</h2>
+
+<table>
+<tr><th class="tw">Project</th><th>What it is</th></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/latent_mas_slora">LatentMAS-SLoRA</a></td><td>Multi-agent reasoning with dynamic LoRA routing and latent-space collaboration</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/gpu-broker-mcp">gpu-broker-mcp</a></td><td>MCP server brokering GPU compute for agents</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/RAG_Chatbot_-_Evaluation_LLM_as_Judge">RAG + LLM-as-Judge</a></td><td>Retrieval over URL/JSON/CSV with citation tracking and automated evaluation</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/Wan2.2_multigpu_runpod_gpu_with_gradio_interface_for_selfhosting_UI">Wan 2.2 Multi-GPU</a></td><td>Topology-aware video pipeline, per-GPU VRAM capping to kill multi-GPU OOM</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/flux2kleinserverless">FLUX.2 klein Worker</a></td><td>Serverless text-to-image and image-to-image, near-zero idle cost</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/wordpress-cloner">WordPress Cloner</a></td><td>Async site cloner, 8-signal detection, REST extraction, WXR export</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/worker-whisper">Whisper Worker</a></td><td>Speech-to-text as a scalable on-demand endpoint</td></tr>
+</table>
+
+<details>
+<summary>More: LoRA training, Bangla NLP, low-VRAM inference</summary>
+<table style="margin-top:1em">
+<tr><td><a href="https://github.com/Arifuzzamanjoy/Flux.2-dev-gradio-ui-runpod-A40-48-vram--H200-vram-">Flux LoRA Studio</a></td><td>Self-hosted Flux LoRA platform, A40 48GB through H200, 4-bit quantization</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/image_diffusion_ecosystem_serverlesss">Diffusion Serverless</a></td><td>End-to-end serverless diffusion inference, Dockerized with CI/CD</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/self-hosted-ai-starter-kit-low_cost_cloud_cpu_with_external_share-">Self-Hosted AI Kit</a></td><td>Low-cost CPU-friendly self-hosting with secure external sharing</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/bangladeshi-tts-finetuning">Bangla TTS</a></td><td>Fine-tuning text-to-speech for Bangla</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/bangla-punctuation-restoration">Bangla punctuation</a></td><td>Transformer-based punctuation restoration</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/Wan2GP">Wan2GP</a></td><td>Low-VRAM video generation for consumer GPUs</td></tr>
+<tr><td><a href="https://github.com/Arifuzzamanjoy/Ltx-Image-to-Video-GradioInterface">Ltx-Image-to-Video</a></td><td>Image-to-video with a Gradio interface</td></tr>
+</table>
+</details>
+
+<h2>Research</h2>
+
+<p>Five peer-reviewed papers, 75 citations, h-index 5.
+<a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
+<a href="https://orcid.org/0009-0005-2420-6585">ORCID</a> ·
+<a href="https://www.researchgate.net/profile/Arifuzzaman-Joy">ResearchGate</a></p>
+
+<table>
+<tr><th>Paper</th><th>Venue</th></tr>
+<tr><td><a href="https://doi.org/10.1016/j.seta.2025.104264">ML-assisted revelation of the best-performing single heterojunction thermophotovoltaic cell</a></td><td>Sustainable Energy Technologies &amp; Assessments (Elsevier), Q1 · 2025</td></tr>
+<tr><td><a href="https://doi.org/10.1016/j.solener.2024.112870">ML-enabled performance exploration of AuCuSe₄ in a thermophotovoltaic cell</a></td><td>Solar Energy (Elsevier), Q1 · 2024</td></tr>
+<tr><td><a href="https://doi.org/10.1016/j.heliyon.2023.e19011">Numerical studies on a ternary AgInTe₂ chalcopyrite thin-film solar cell</a> <span class="note">first author</span></td><td>Heliyon (Cell Press), Q1 · 2023</td></tr>
+<tr><td><a href="https://doi.org/10.1002/nano.202200228">Numerical prediction of PV performance of a CZTS-based thin-film solar cell</a></td><td>Nano Select (Wiley), Q2 · 2023</td></tr>
+<tr><td><a href="https://doi.org/10.14569/IJACSA.2024.01507126">Open-source transformers in medical imaging</a> <span class="note">brain MRI, 99.60% accuracy, 0.90 Dice</span></td><td>IJACSA · 2024</td></tr>
+</table>
+
+<p class="note">Ongoing: speech enhancement on bone-conducted audio using
+<a href="https://github.com/Arifuzzamanjoy/Bone-Conducted-Speech-Enhancement-With-Neural-Network">neural networks</a> and
+<a href="https://github.com/Arifuzzamanjoy/BoneGAN-Generative-Adversarial-Networks-for-Bone-Conducted-Speech">GANs</a>, evaluated with SNR, PESQ and MOS.
+Journal quartiles follow the latest JCR/Scopus release and vary by database and subject category.</p>
+
+<h2>The work I'm looking for</h2>
+
+<p>I care where this ends up. My research has been in solar cell optimization and medical imaging, and the client work I go after tends to sit in health, energy, education, or scientific tooling. Good rates matter and I'm not shy about that. But I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
+
+<p>If that's what you're building, lead with it.</p>
+
+<h2>Background</h2>
+
+<p>B.Sc. in Electrical &amp; Electronic Engineering, University of Rajshahi, Bangladesh, out of the Solar Energy Laboratory. Certifications in SQL Advanced and REST API (HackerRank), Deep Learning with TensorFlow (IBM), and Prompt Engineering (Vanderbilt).</p>
+
+<p><strong>Stack.</strong> RunPod, Modal, Vast.ai, vLLM, Docker and Compose, torch.distributed, FSDP, 4-bit quantization. PyTorch, Transformers, PEFT/LoRA, LangChain, MCP, RAG, Qwen2.5-VL. Python, FastAPI, Bash, GitHub Actions, pytest, ShellCheck, SQL, MongoDB.</p>
+
+<h2>Get in touch</h2>
+
+<p>Send me the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me.</p>
+
+<p>
+  <a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a>
+  &nbsp; <a href="mailto:joy.apee@gmail.com">joy.apee@gmail.com</a>
+</p>
+
+<footer>
+  <a href="https://github.com/Arifuzzamanjoy">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/arifuzzaman-joy-ru/">LinkedIn</a> ·
+  <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
+  <a href="https://huggingface.co/Joyapeee">Hugging Face</a> ·
+  <a href="https://orcid.org/0009-0005-2420-6585">ORCID</a>
+  <br><br>
+  No trackers, no analytics, no frameworks. One HTML file.
+</footer>
+
+</div>
 </body>
 </html>
