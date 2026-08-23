@@ -29,16 +29,16 @@ body{
   font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   padding:0 24px;
 }
-.wrap{max-width:720px;margin:0 auto;padding:64px 0 96px}
+.wrap{max-width:720px;margin:0 auto;padding:64px 0 80px}
 h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:600;line-height:1.25}
 h1{font-size:2.1rem;margin:0 0 .3em;letter-spacing:-.01em}
-h2{font-size:1.32rem;margin:3.4em 0 .9em;padding-bottom:.35em;border-bottom:1px solid var(--rule)}
-h3{font-size:1.06rem;margin:2.2em 0 .5em}
+h2{font-size:1.32rem;margin:2.8em 0 .8em;padding-bottom:.35em;border-bottom:1px solid var(--rule)}
+h3{font-size:1.02rem;margin:1.6em 0 .3em}
 p{margin:0 0 1.1em}
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
 a:hover{border-bottom-color:var(--accent)}
 .lede{font-size:1.16rem;color:var(--fg)}
-.sub{color:var(--muted);font-size:.97rem;margin:0 0 2em}
+.sub{color:var(--muted);font-size:.97rem;margin:0 0 1.8em}
 .sub a{color:var(--muted);border-bottom-color:var(--rule)}
 .sub a:hover{color:var(--accent)}
 
@@ -53,41 +53,35 @@ a:hover{border-bottom-color:var(--accent)}
 @media (prefers-color-scheme:dark){.cta.ghost{color:var(--accent)}}
 .paths{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 2.2em}
 
-.proof{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:6px 20px;margin:2em 0}
+.proof{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:6px 20px;margin:1.8em 0}
 .proof dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
 .proof dt{padding:13px 0;font-weight:600;font-size:.95rem;border-bottom:1px solid var(--rule)}
 .proof dd{padding:13px 0 13px 18px;margin:0;color:var(--muted);font-size:.92rem;border-bottom:1px solid var(--rule);text-align:right}
 .proof dt:last-of-type,.proof dd:last-of-type{border-bottom:0}
 
 ul{padding-left:1.15em;margin:0 0 1.1em}
-li{margin-bottom:.5em}
+li{margin-bottom:.42em}
 
-.case{margin:0 0 2.6em}
+.case{margin:0 0 1.5em}
 .case h3{margin-bottom:.15em}
-.case .meta{color:var(--muted);font-size:.87rem;margin:0 0 .8em;font-variant-numeric:tabular-nums}
+.case p{margin:0}
 
-table{width:100%;border-collapse:collapse;font-size:.94rem;margin:0 0 1.4em}
-th{text-align:left;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;
-   color:var(--muted);padding:0 12px 8px 0;border-bottom:1px solid var(--rule)}
+table{width:100%;border-collapse:collapse;font-size:.94rem;margin:0 0 1.2em}
 td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
-td:last-child,th:last-child{padding-right:0;color:var(--muted)}
-.tw{width:34%}
+td:last-child{padding-right:0;color:var(--muted);white-space:nowrap}
+tr:last-child td{border-bottom:0}
 
-details{margin:.6em 0 1.4em;font-size:.95rem}
-summary{cursor:pointer;color:var(--muted)}
-summary:hover{color:var(--accent)}
-
-footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
+footer{margin-top:3.4em;padding-top:1.5em;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
 .note{color:var(--muted);font-size:.86rem}
 
 @media (max-width:560px){
   body{padding:0 18px;font-size:16px}
-  .wrap{padding:44px 0 64px}
+  .wrap{padding:44px 0 56px}
   h1{font-size:1.75rem}
   .proof dl{grid-template-columns:1fr}
   .proof dd{text-align:left;padding:0 0 13px;border-bottom:1px solid var(--rule)}
   .proof dt{border-bottom:0;padding-bottom:3px}
-  .tw{width:auto}
+  td:last-child{white-space:normal}
 }
 </style>
 </head>
@@ -101,8 +95,7 @@ footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color
   <a href="mailto:joy.apee@gmail.com">Email</a> ·
   <a href="https://github.com/Arifuzzamanjoy">GitHub</a> ·
   <a href="https://www.linkedin.com/in/arifuzzaman-joy-ru/">LinkedIn</a> ·
-  <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
-  <a href="https://huggingface.co/Joyapeee">Hugging Face</a>
+  <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a>
 </p>
 
 <p class="paths">
@@ -110,13 +103,7 @@ footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color
   <a class="cta ghost" href="#research">Research &amp; graduate study</a>
 </p>
 
-<p>I trained as an electrical engineer, which meant learning computers from the bottom up: vacuum tubes, then semiconductor junctions, then transistors, then eventually the machines built out of them. I now spend my days on the other end of that stack, keeping GPU clusters fed.</p>
-
-<p>The training turns out to be unreasonably useful there. Most people debugging a CUDA out-of-memory error are reasoning about an abstraction. I'm reasoning about a device: a memory hierarchy with real latencies, a thermal budget, a bus with opinions, a card that was manufactured by someone having a bad day. Knowing where the abstraction stops and the silicon starts is most of what separates a deployment that survives production from one that works on your laptop.</p>
-
-<p>The rest of the job is unglamorous. The Dockerfile that builds on the first try. The installer that survives a Vast.ai box shipping the wrong CUDA driver. The health check that had been quietly dropping half your services since March and nobody noticed.</p>
-
-<h2>Things you can verify</h2>
+<p>I trained as an electrical engineer, so I learned computers from the bottom up: semiconductor junctions, then transistors, then the machines built out of them. I now work at the other end of that stack, keeping GPU clusters fed. Most people debugging a CUDA out-of-memory error are reasoning about an abstraction. I'm reasoning about a device with a memory hierarchy, a thermal budget, and a bus that has opinions.</p>
 
 <div class="proof">
 <dl>
@@ -134,131 +121,52 @@ footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color
 <h2>What people hire me for</h2>
 
 <ul>
-  <li><strong>Serverless GPU deployment</strong> on RunPod, Modal, or Vast.ai. Dockerized endpoints, CI/CD, autoscaled down to near-zero idle cost.</li>
-  <li><strong>RAG and document pipelines that can prove they work.</strong> Retrieval, citation tracking, multi-hop reasoning, and LLM-as-judge evaluation, so "it feels better" turns into a number you can put in a report.</li>
-  <li><strong>Multi-agent systems</strong>, including latent-space designs where agents pass hidden states instead of burning tokens regenerating text.</li>
-  <li><strong>Hot-swappable LoRA serving</strong> off a single base model, routed by domain. I train the adapters too.</li>
-  <li><strong>Rescuing deployments that almost work.</strong> Multi-GPU OOM, driver mismatch, topology-aware placement, fitting a model onto a card that shouldn't hold it.</li>
+  <li><strong>Serverless GPU deployment</strong> on RunPod, Modal, or Vast.ai. Dockerized, CI/CD, autoscaled to near-zero idle cost.</li>
+  <li><strong>RAG pipelines that can prove they work</strong>, with citation tracking and LLM-as-judge evaluation.</li>
+  <li><strong>Multi-agent systems</strong> and hot-swappable LoRA serving off a single base model. I train the adapters too.</li>
+  <li><strong>Rescuing deployments that almost work.</strong> Multi-GPU OOM, driver mismatch, fitting a model onto a card that shouldn't hold it.</li>
 </ul>
 
 <h2>Selected work</h2>
 
 <div class="case">
 <h3><a href="https://github.com/Osmantic/ODS/pull/1343">Health checks that don't lie</a></h3>
-<p class="meta">ODS · open source · Python, JSON Schema, Bash</p>
-<p>ODS assumed every service spoke HTTP. Anything exposing only TCP or a CLI failed its health check, got marked dead, and vanished from the dashboard without an error anyone would ever see. Silent data loss, essentially, but for services.</p>
-<p>I threaded a <code>health_type: http|tcp|none</code> field through the entire stack: JSON schema, catalog generator, dashboard API, and the shell scripts underneath. The interesting part wasn't the feature. It was the migration. Dozens of existing service manifests had to keep working untouched, so the default had to infer correctly from what each one already declared.</p>
-<p class="note">Also merged in the same codebase: a <a href="https://github.com/Osmantic/ODS/pull/1664">node diagnostics endpoint</a> for runtime hardware introspection, <a href="https://github.com/Osmantic/ODS/pull/646">gpu_backends schema validation</a>, and <a href="https://github.com/Osmantic/ODS/pull/717">compatibility blocks across 25 manifests</a>.</p>
+<p>ODS assumed every service spoke HTTP, so anything exposing only TCP or a CLI was marked dead and vanished from the dashboard without an error anyone would see. I threaded a <code>health_type</code> field through the schema, catalog generator, dashboard API and shell scripts, with defaults that inferred correctly so dozens of existing manifests kept working untouched.</p>
 </div>
 
 <div class="case">
 <h3><a href="https://github.com/Arifuzzamanjoy/latent_mas_slora">Agents that think without talking</a></h3>
-<p class="meta">LatentMAS-SLoRA · PyTorch, PEFT, Qwen2.5-VL, RunPod</p>
-<p>Multi-agent systems waste a lot of money re-serializing thoughts into English so the next agent can parse them back out. The LatentMAS paper (ICML 2026 Spotlight, <a href="https://arxiv.org/abs/2511.20639">arXiv:2511.20639</a>) showed you can skip that step and pass hidden states directly between agents.</p>
-<p>I extended it with role-specialized LoRA adapters that hot-swap at runtime, so one base model plays Planner, Critic, Refiner, and Judger without holding four sets of weights in VRAM. The Critic and Refiner never emit a token, roughly 200ms each. It ships with vision-language support on Qwen2.5-VL-7B, RAG integration, and a RunPod serverless deployment with CI/CD.</p>
-<p>The paper's authors added it to their README as <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">community extension #5</a>, alongside work from MIT's LAMM group. There's a <a href="https://www.youtube.com/watch?v=g7sxYjwgRRk">demo video</a>.</p>
-<p class="note">The README is equally clear about what it isn't: PEFT-based adapter management rather than true S-LoRA, with no custom CUDA paging kernels and no heterogeneous batching. Throughput benchmarks against vLLM S-LoRA are on the roadmap, not done. I'd rather you read that here than find it out on a call.</p>
+<p>Multi-agent systems waste money re-serializing thoughts into English so the next agent can parse them back. I extended the LatentMAS paper (ICML 2026 Spotlight) with role-specialized LoRA adapters that hot-swap at runtime, so one base model plays four agents without four sets of weights in VRAM. The authors added it to their README as a <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">community extension</a>. The repo is equally clear about what it isn't: PEFT adapter management, not true S-LoRA, with benchmarks still on the roadmap.</p>
 </div>
 
 <div class="case">
 <h3><a href="https://github.com/Osmantic/ODS/pull/983">Making rented GPUs behave</a></h3>
-<p class="meta">ODS · Bash, Docker Compose, Vast.ai</p>
-<p>GPU marketplaces hand you a box that is technically the card you paid for and broken in a dozen quiet ways. Wrong driver version, missing ACLs, a container runtime that was never wired up properly.</p>
-<p>I wrote a multi-phase hardened installer for it: <code>set -euo pipefail</code> throughout, hard-fail ACL checks, GPU-tier detection, and around 28 documented host-environment failure modes with the fix for each one. The documentation was most of the value here. Anyone can write the happy path.</p>
+<p>GPU marketplaces hand you a box that is technically the card you paid for and broken in a dozen quiet ways. I wrote a hardened multi-phase installer for it, with GPU-tier detection and roughly 28 documented host-environment failure modes and their fixes. The documentation was most of the value. Anyone can write the happy path.</p>
 </div>
 
-<div class="case">
-<h3><a href="https://github.com/Arifuzzamanjoy/gpu-broker-mcp">A broker so agents can rent their own GPUs</a></h3>
-<p class="meta">gpu-broker-mcp · MCP, Python, Streamable HTTP</p>
-<p>A stateless MCP server that lets an agent discover nodes, reserve capacity, dispatch inference, and poll for results through four tools, without ever handling SSH keys, node IPs, or provider APIs itself. Stateless by design, so there are no sessions to lose and no sticky routing to get wrong.</p>
-</div>
-
-<h2>Open source</h2>
-
-<p>I work in public. The fastest way to judge whether I'm any good is to read a diff.</p>
-
-<table>
-<tr><th class="tw">Project</th><th>Contribution</th></tr>
-<tr><td><a href="https://github.com/Osmantic/ODS">Osmantic/ODS</a> <span class="note">4.6k ★</span></td><td>23 PRs opened, 14 merged. Schema, dashboard API, health checks, GPU telemetry, installer toolkit.</td></tr>
-<tr><td><a href="https://github.com/kvcache-ai/ktransformers">ktransformers</a> <span class="note">19k ★</span></td><td>CPU feature-detection tests and a consumer-hardware config guide. In review.</td></tr>
-<tr><td><a href="https://github.com/casys-kaist/LLMServingSim">LLMServingSim</a> <span class="note">370 ★</span></td><td>RTX 4090 profile bundle with validation for Llama-3.1-8B. Merged.</td></tr>
-<tr><td><a href="https://github.com/Gen-Verse/LatentMAS">Gen-Verse/LatentMAS</a></td><td>LatentMAS-SLoRA listed as a community extension.</td></tr>
-</table>
-
-<h2>Projects</h2>
-
-<table>
-<tr><th class="tw">Project</th><th>What it is</th></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/latent_mas_slora">LatentMAS-SLoRA</a></td><td>Multi-agent reasoning with dynamic LoRA routing and latent-space collaboration</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/gpu-broker-mcp">gpu-broker-mcp</a></td><td>MCP server brokering GPU compute for agents</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/RAG_Chatbot_-_Evaluation_LLM_as_Judge">RAG + LLM-as-Judge</a></td><td>Retrieval over URL/JSON/CSV with citation tracking and automated evaluation</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/Wan2.2_multigpu_runpod_gpu_with_gradio_interface_for_selfhosting_UI">Wan 2.2 Multi-GPU</a></td><td>Topology-aware video pipeline, per-GPU VRAM capping to kill multi-GPU OOM</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/flux2kleinserverless">FLUX.2 klein Worker</a></td><td>Serverless text-to-image and image-to-image, near-zero idle cost</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/wordpress-cloner">WordPress Cloner</a></td><td>Async site cloner, 8-signal detection, REST extraction, WXR export</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/worker-whisper">Whisper Worker</a></td><td>Speech-to-text as a scalable on-demand endpoint</td></tr>
-</table>
-
-<details>
-<summary>More: LoRA training, Bangla NLP, low-VRAM inference</summary>
-<table style="margin-top:1em">
-<tr><td><a href="https://github.com/Arifuzzamanjoy/Flux.2-dev-gradio-ui-runpod-A40-48-vram--H200-vram-">Flux LoRA Studio</a></td><td>Self-hosted Flux LoRA platform, A40 48GB through H200, 4-bit quantization</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/image_diffusion_ecosystem_serverlesss">Diffusion Serverless</a></td><td>End-to-end serverless diffusion inference, Dockerized with CI/CD</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/self-hosted-ai-starter-kit-low_cost_cloud_cpu_with_external_share-">Self-Hosted AI Kit</a></td><td>Low-cost CPU-friendly self-hosting with secure external sharing</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/bangladeshi-tts-finetuning">Bangla TTS</a></td><td>Fine-tuning text-to-speech for Bangla</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/bangla-punctuation-restoration">Bangla punctuation</a></td><td>Transformer-based punctuation restoration</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/Wan2GP">Wan2GP</a></td><td>Low-VRAM video generation for consumer GPUs</td></tr>
-<tr><td><a href="https://github.com/Arifuzzamanjoy/Ltx-Image-to-Video-GradioInterface">Ltx-Image-to-Video</a></td><td>Image-to-video with a Gradio interface</td></tr>
-</table>
-</details>
+<p class="note">More, including an <a href="https://github.com/Arifuzzamanjoy/gpu-broker-mcp">MCP server that brokers GPU compute for agents</a>, at <a href="https://github.com/Arifuzzamanjoy">github.com/Arifuzzamanjoy</a>.</p>
 
 <h2 id="research">Research and graduate study</h2>
 
-<p><strong>I'm applying to Master's programs in computer science and machine learning systems.</strong> If you're a faculty member who followed a link here, this section is the part worth your time.</p>
+<p><strong>I'm applying to Master's programs in computer science and machine learning systems.</strong> My published work is applied ML in two domains with the same instinct behind both: take a physical system that's slow or expensive to measure, and learn a model of it good enough to search. Five peer-reviewed papers, 75 citations, h-index 5, one as first author.</p>
 
-<p>My published work is applied machine learning across two domains, and the instinct is the same in both: take a physical system that is slow or expensive to measure, and learn a model of it good enough to search. In semiconductor devices that meant predicting photovoltaic performance across material combinations that would take months to fabricate and test. In medical imaging it meant transformer architectures for brain MRI classification and segmentation. Five peer-reviewed papers, 75 citations, h-index 5, one as first author.</p>
+<p>What I want next is the systems side of ML rather than the applications side — efficient inference and serving, multi-agent architectures, and the memory and scheduling problems that appear when models meet real hardware. That's not a new interest: I've contributed to a <a href="https://github.com/casys-kaist/LLMServingSim/pull/59">KAIST lab's LLM-serving simulator</a>, and my extension of an ICML Spotlight paper was adopted into the authors' own repo. My electrical engineering training is why I find these problems legible.</p>
 
-<p><strong>Where I want to go next</strong> is the systems side of machine learning rather than the applications side. Efficient inference and serving, multi-agent architectures, and the memory and scheduling problems that show up when models meet real hardware. That interest is not theoretical for me: I've contributed to an <a href="https://github.com/casys-kaist/LLMServingSim/pull/59">LLM-serving simulator out of a KAIST lab</a>, and my extension of an <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">ICML 2026 Spotlight paper</a> was adopted into the authors' own repository. My electrical engineering training is the reason I find these problems legible.</p>
-
-<p class="sub" style="margin:1.6em 0 .8em">
-<a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Google Scholar</a> ·
-<a href="https://orcid.org/0009-0005-2420-6585">ORCID</a> ·
-<a href="https://www.researchgate.net/profile/Arifuzzaman-Joy">ResearchGate</a> ·
-<a href="mailto:joy.apee@gmail.com">joy.apee@gmail.com</a>
-</p>
-
-<h3>Machine learning for imaging and signals</h3>
 <table>
-<tr><td><a href="https://doi.org/10.14569/IJACSA.2024.01507126">Open-source transformers in medical imaging</a> <span class="note">brain MRI, 99.60% accuracy, 0.90 Dice</span></td><td>IJACSA · 2024</td></tr>
-<tr><td>Speech enhancement on bone-conducted audio, using <a href="https://github.com/Arifuzzamanjoy/Bone-Conducted-Speech-Enhancement-With-Neural-Network">neural networks</a> and <a href="https://github.com/Arifuzzamanjoy/BoneGAN-Generative-Adversarial-Networks-for-Bone-Conducted-Speech">GANs</a>, evaluated with SNR, PESQ and MOS <span class="note">ongoing</span></td><td>in progress</td></tr>
+<tr><td><a href="https://doi.org/10.14569/IJACSA.2024.01507126">Open-source transformers in medical imaging</a> <span class="note">brain MRI, 99.60% accuracy</span></td><td>IJACSA · 2024</td></tr>
+<tr><td><a href="https://doi.org/10.1016/j.seta.2025.104264">ML-assisted design of single heterojunction thermophotovoltaic cells</a></td><td>Sust. Energy Tech. &amp; Assess. (Q1) · 2025</td></tr>
+<tr><td><a href="https://doi.org/10.1016/j.solener.2024.112870">ML-enabled performance exploration of AuCuSe₄</a></td><td>Solar Energy (Q1) · 2024</td></tr>
+<tr><td><a href="https://doi.org/10.1016/j.heliyon.2023.e19011">Ternary AgInTe₂ chalcopyrite thin-film cell</a> <span class="note">first author</span></td><td>Heliyon (Q1) · 2023</td></tr>
+<tr><td><a href="https://doi.org/10.1002/nano.202200228">PV performance of a CZTS-based thin-film cell</a></td><td>Nano Select (Q2) · 2023</td></tr>
 </table>
 
-<h3>Machine learning for semiconductor device design</h3>
-<table>
-<tr><td><a href="https://doi.org/10.1016/j.seta.2025.104264">ML-assisted revelation of the best-performing single heterojunction thermophotovoltaic cell</a></td><td>Sustainable Energy Technologies &amp; Assessments (Elsevier), Q1 · 2025</td></tr>
-<tr><td><a href="https://doi.org/10.1016/j.solener.2024.112870">ML-enabled performance exploration of AuCuSe₄ in a thermophotovoltaic cell</a></td><td>Solar Energy (Elsevier), Q1 · 2024</td></tr>
-<tr><td><a href="https://doi.org/10.1016/j.heliyon.2023.e19011">Numerical studies on a ternary AgInTe₂ chalcopyrite thin-film solar cell</a> <span class="note">first author</span></td><td>Heliyon (Cell Press), Q1 · 2023</td></tr>
-<tr><td><a href="https://doi.org/10.1002/nano.202200228">Numerical prediction of PV performance of a CZTS-based thin-film solar cell</a></td><td>Nano Select (Wiley), Q2 · 2023</td></tr>
-</table>
-
-<p class="note">Journal quartiles follow the latest JCR/Scopus release and vary by database and subject category.</p>
-
-<h2>The work I'm looking for</h2>
-
-<p>I care where this ends up. The client work I go after tends to sit in health, energy, education, or scientific tooling. Good rates matter and I'm not shy about that. But I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
-
-<p>If that's what you're building, lead with it.</p>
-
-<h2>Background</h2>
-
-<p>B.Sc. in Electrical &amp; Electronic Engineering, University of Rajshahi, Bangladesh, out of the Solar Energy Laboratory. Four years of semiconductor physics, signal processing, and control systems, which is a strange and useful way to arrive at distributed GPU infrastructure. Certifications in SQL Advanced and REST API (HackerRank), Deep Learning with TensorFlow (IBM), and Prompt Engineering (Vanderbilt).</p>
-
-<p><strong>Stack.</strong> RunPod, Modal, Vast.ai, vLLM, Docker and Compose, torch.distributed, FSDP, 4-bit quantization. PyTorch, Transformers, PEFT/LoRA, LangChain, MCP, RAG, Qwen2.5-VL. Python, FastAPI, Bash, GitHub Actions, pytest, ShellCheck, SQL, MongoDB.</p>
+<p class="note">Ongoing: speech enhancement on bone-conducted audio with <a href="https://github.com/Arifuzzamanjoy/Bone-Conducted-Speech-Enhancement-With-Neural-Network">neural networks</a> and <a href="https://github.com/Arifuzzamanjoy/BoneGAN-Generative-Adversarial-Networks-for-Bone-Conducted-Speech">GANs</a>. B.Sc. in Electrical &amp; Electronic Engineering, University of Rajshahi. <a href="https://orcid.org/0009-0005-2420-6585">ORCID</a> · <a href="https://www.researchgate.net/profile/Arifuzzaman-Joy">ResearchGate</a></p>
 
 <h2>Get in touch</h2>
 
-<p><strong>Contract work.</strong> Send me the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me.</p>
+<p><strong>Contract work.</strong> Send the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me. I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
 
-<p><strong>Graduate study.</strong> If you're a faculty member and my research interests line up with your group, email me directly. I'm happy to send a CV, transcripts, or a longer statement of what I'd want to work on.</p>
+<p><strong>Graduate study.</strong> If my interests line up with your group, email me and I'll send a CV and a longer statement.</p>
 
 <p class="paths">
   <a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a>
@@ -269,10 +177,7 @@ footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color
   <a href="https://github.com/Arifuzzamanjoy">GitHub</a> ·
   <a href="https://www.linkedin.com/in/arifuzzaman-joy-ru/">LinkedIn</a> ·
   <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
-  <a href="https://huggingface.co/Joyapeee">Hugging Face</a> ·
-  <a href="https://orcid.org/0009-0005-2420-6585">ORCID</a>
-  <br><br>
-  No trackers, no analytics, no frameworks. One HTML file.
+  <a href="https://huggingface.co/Joyapeee">Hugging Face</a>
 </footer>
 
 </div>
