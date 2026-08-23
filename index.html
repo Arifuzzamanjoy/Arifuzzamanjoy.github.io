@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arifuzzaman Joy — LLM &amp; GPU infrastructure</title>
-<meta name="description" content="I put LLM and AI-agent systems into production on serverless and rented GPUs. Freelance LLM infrastructure, RAG, multi-agent systems, and GPU deployment.">
+<meta name="description" content="Electrical engineer turned LLM and GPU infrastructure engineer. Freelance LLM deployment, RAG, and multi-agent systems. Five peer-reviewed papers in applied machine learning; applying to Master's programs in ML systems.">
 <link rel="icon" href="favicon.jpg">
 <meta property="og:title" content="Arifuzzaman Joy — LLM &amp; GPU infrastructure">
-<meta property="og:description" content="I put LLM and AI-agent systems into production on serverless and rented GPUs.">
+<meta property="og:description" content="Electrical engineer turned LLM and GPU infrastructure engineer. Freelance deployment work, and applied ML research.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arifuzzamanjoy.github.io/">
 <link rel="canonical" href="https://arifuzzamanjoy.github.io/">
@@ -48,6 +48,10 @@ a:hover{border-bottom-color:var(--accent)}
 }
 .cta:hover{opacity:.88;border:0}
 @media (prefers-color-scheme:dark){.cta{color:#12141a}}
+.cta.ghost{background:transparent;color:var(--accent);border:1px solid var(--rule)}
+.cta.ghost:hover{border:1px solid var(--accent);opacity:1}
+@media (prefers-color-scheme:dark){.cta.ghost{color:var(--accent)}}
+.paths{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 2.2em}
 
 .proof{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:6px 20px;margin:2em 0}
 .proof dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
@@ -101,11 +105,16 @@ footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color
   <a href="https://huggingface.co/Joyapeee">Hugging Face</a>
 </p>
 
-<p><a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a></p>
+<p class="paths">
+  <a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a>
+  <a class="cta ghost" href="#research">Research &amp; graduate study</a>
+</p>
 
-<p>I started out simulating solar cells in a university physics lab and ended up making GPUs behave. The through line is the same either way: someone has a model that works in theory, and it has to survive contact with real hardware.</p>
+<p>I trained as an electrical engineer, which meant learning computers from the bottom up: vacuum tubes, then semiconductor junctions, then transistors, then eventually the machines built out of them. I now spend my days on the other end of that stack, keeping GPU clusters fed.</p>
 
-<p>Most of what I do now is unglamorous. The Dockerfile that builds on the first try. The installer that survives a Vast.ai box shipping the wrong CUDA driver. The health check that had been quietly dropping half your services since March and nobody noticed. I still publish research, which mostly means I can read a paper on Monday and have it deployed by Friday instead of bookmarking it and feeling good about myself.</p>
+<p>The training turns out to be unreasonably useful there. Most people debugging a CUDA out-of-memory error are reasoning about an abstraction. I'm reasoning about a device: a memory hierarchy with real latencies, a thermal budget, a bus with opinions, a card that was manufactured by someone having a bad day. Knowing where the abstraction stops and the silicon starts is most of what separates a deployment that survives production from one that works on your laptop.</p>
+
+<p>The rest of the job is unglamorous. The Dockerfile that builds on the first try. The installer that survives a Vast.ai box shipping the wrong CUDA driver. The health check that had been quietly dropping half your services since March and nobody noticed.</p>
 
 <h2>Things you can verify</h2>
 
@@ -202,46 +211,58 @@ footer{margin-top:4.5em;padding-top:1.6em;border-top:1px solid var(--rule);color
 </table>
 </details>
 
-<h2>Research</h2>
+<h2 id="research">Research and graduate study</h2>
 
-<p>Five peer-reviewed papers, 75 citations, h-index 5.
-<a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
+<p><strong>I'm applying to Master's programs in computer science and machine learning systems.</strong> If you're a faculty member who followed a link here, this section is the part worth your time.</p>
+
+<p>My published work is applied machine learning across two domains, and the instinct is the same in both: take a physical system that is slow or expensive to measure, and learn a model of it good enough to search. In semiconductor devices that meant predicting photovoltaic performance across material combinations that would take months to fabricate and test. In medical imaging it meant transformer architectures for brain MRI classification and segmentation. Five peer-reviewed papers, 75 citations, h-index 5, one as first author.</p>
+
+<p><strong>Where I want to go next</strong> is the systems side of machine learning rather than the applications side. Efficient inference and serving, multi-agent architectures, and the memory and scheduling problems that show up when models meet real hardware. That interest is not theoretical for me: I've contributed to an <a href="https://github.com/casys-kaist/LLMServingSim/pull/59">LLM-serving simulator out of a KAIST lab</a>, and my extension of an <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">ICML 2026 Spotlight paper</a> was adopted into the authors' own repository. My electrical engineering training is the reason I find these problems legible.</p>
+
+<p class="sub" style="margin:1.6em 0 .8em">
+<a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Google Scholar</a> ·
 <a href="https://orcid.org/0009-0005-2420-6585">ORCID</a> ·
-<a href="https://www.researchgate.net/profile/Arifuzzaman-Joy">ResearchGate</a></p>
+<a href="https://www.researchgate.net/profile/Arifuzzaman-Joy">ResearchGate</a> ·
+<a href="mailto:joy.apee@gmail.com">joy.apee@gmail.com</a>
+</p>
 
+<h3>Machine learning for imaging and signals</h3>
 <table>
-<tr><th>Paper</th><th>Venue</th></tr>
+<tr><td><a href="https://doi.org/10.14569/IJACSA.2024.01507126">Open-source transformers in medical imaging</a> <span class="note">brain MRI, 99.60% accuracy, 0.90 Dice</span></td><td>IJACSA · 2024</td></tr>
+<tr><td>Speech enhancement on bone-conducted audio, using <a href="https://github.com/Arifuzzamanjoy/Bone-Conducted-Speech-Enhancement-With-Neural-Network">neural networks</a> and <a href="https://github.com/Arifuzzamanjoy/BoneGAN-Generative-Adversarial-Networks-for-Bone-Conducted-Speech">GANs</a>, evaluated with SNR, PESQ and MOS <span class="note">ongoing</span></td><td>in progress</td></tr>
+</table>
+
+<h3>Machine learning for semiconductor device design</h3>
+<table>
 <tr><td><a href="https://doi.org/10.1016/j.seta.2025.104264">ML-assisted revelation of the best-performing single heterojunction thermophotovoltaic cell</a></td><td>Sustainable Energy Technologies &amp; Assessments (Elsevier), Q1 · 2025</td></tr>
 <tr><td><a href="https://doi.org/10.1016/j.solener.2024.112870">ML-enabled performance exploration of AuCuSe₄ in a thermophotovoltaic cell</a></td><td>Solar Energy (Elsevier), Q1 · 2024</td></tr>
 <tr><td><a href="https://doi.org/10.1016/j.heliyon.2023.e19011">Numerical studies on a ternary AgInTe₂ chalcopyrite thin-film solar cell</a> <span class="note">first author</span></td><td>Heliyon (Cell Press), Q1 · 2023</td></tr>
 <tr><td><a href="https://doi.org/10.1002/nano.202200228">Numerical prediction of PV performance of a CZTS-based thin-film solar cell</a></td><td>Nano Select (Wiley), Q2 · 2023</td></tr>
-<tr><td><a href="https://doi.org/10.14569/IJACSA.2024.01507126">Open-source transformers in medical imaging</a> <span class="note">brain MRI, 99.60% accuracy, 0.90 Dice</span></td><td>IJACSA · 2024</td></tr>
 </table>
 
-<p class="note">Ongoing: speech enhancement on bone-conducted audio using
-<a href="https://github.com/Arifuzzamanjoy/Bone-Conducted-Speech-Enhancement-With-Neural-Network">neural networks</a> and
-<a href="https://github.com/Arifuzzamanjoy/BoneGAN-Generative-Adversarial-Networks-for-Bone-Conducted-Speech">GANs</a>, evaluated with SNR, PESQ and MOS.
-Journal quartiles follow the latest JCR/Scopus release and vary by database and subject category.</p>
+<p class="note">Journal quartiles follow the latest JCR/Scopus release and vary by database and subject category.</p>
 
 <h2>The work I'm looking for</h2>
 
-<p>I care where this ends up. My research has been in solar cell optimization and medical imaging, and the client work I go after tends to sit in health, energy, education, or scientific tooling. Good rates matter and I'm not shy about that. But I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
+<p>I care where this ends up. The client work I go after tends to sit in health, energy, education, or scientific tooling. Good rates matter and I'm not shy about that. But I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
 
 <p>If that's what you're building, lead with it.</p>
 
 <h2>Background</h2>
 
-<p>B.Sc. in Electrical &amp; Electronic Engineering, University of Rajshahi, Bangladesh, out of the Solar Energy Laboratory. Certifications in SQL Advanced and REST API (HackerRank), Deep Learning with TensorFlow (IBM), and Prompt Engineering (Vanderbilt).</p>
+<p>B.Sc. in Electrical &amp; Electronic Engineering, University of Rajshahi, Bangladesh, out of the Solar Energy Laboratory. Four years of semiconductor physics, signal processing, and control systems, which is a strange and useful way to arrive at distributed GPU infrastructure. Certifications in SQL Advanced and REST API (HackerRank), Deep Learning with TensorFlow (IBM), and Prompt Engineering (Vanderbilt).</p>
 
 <p><strong>Stack.</strong> RunPod, Modal, Vast.ai, vLLM, Docker and Compose, torch.distributed, FSDP, 4-bit quantization. PyTorch, Transformers, PEFT/LoRA, LangChain, MCP, RAG, Qwen2.5-VL. Python, FastAPI, Bash, GitHub Actions, pytest, ShellCheck, SQL, MongoDB.</p>
 
 <h2>Get in touch</h2>
 
-<p>Send me the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me.</p>
+<p><strong>Contract work.</strong> Send me the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me.</p>
 
-<p>
+<p><strong>Graduate study.</strong> If you're a faculty member and my research interests line up with your group, email me directly. I'm happy to send a CV, transcripts, or a longer statement of what I'd want to work on.</p>
+
+<p class="paths">
   <a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a>
-  &nbsp; <a href="mailto:joy.apee@gmail.com">joy.apee@gmail.com</a>
+  <a class="cta ghost" href="mailto:joy.apee@gmail.com">joy.apee@gmail.com</a>
 </p>
 
 <footer>
