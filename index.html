@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arifuzzaman Joy — LLM &amp; GPU infrastructure</title>
-<meta name="description" content="Electrical engineer turned LLM and GPU infrastructure engineer. Freelance LLM deployment, RAG, and multi-agent systems. Five peer-reviewed papers in applied machine learning; applying to Master's programs in ML systems.">
+<title>Arifuzzaman Joy · LLM &amp; GPU infrastructure</title>
+<meta name="description" content="AI/ML infrastructure engineer. LLM serving, RAG pipelines and multi-agent systems on serverless and rented GPUs. Sub-200ms p95 on 7B to 70B models, at about 60% less than managed APIs. Upwork Top Rated, 100% Job Success Score.">
 <link rel="icon" href="favicon.jpg">
-<meta property="og:title" content="Arifuzzaman Joy — LLM &amp; GPU infrastructure">
-<meta property="og:description" content="Electrical engineer turned LLM and GPU infrastructure engineer. Freelance deployment work, and applied ML research.">
+<meta property="og:title" content="Arifuzzaman Joy · LLM &amp; GPU infrastructure">
+<meta property="og:description" content="LLM serving, RAG and multi-agent systems on serverless and rented GPUs. Sub-200ms p95 on 7B to 70B models, at about 60% less than managed APIs.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arifuzzamanjoy.github.io/">
 <link rel="canonical" href="https://arifuzzamanjoy.github.io/">
@@ -51,7 +51,8 @@ a:hover{border-bottom-color:var(--accent)}
 .cta.ghost{background:transparent;color:var(--accent);border:1px solid var(--rule)}
 .cta.ghost:hover{border:1px solid var(--accent);opacity:1}
 @media (prefers-color-scheme:dark){.cta.ghost{color:var(--accent)}}
-.paths{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 2.2em}
+.paths{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 .7em;align-items:center}
+.rated{color:var(--muted);font-size:.9rem;margin:0 0 2.2em}
 
 .proof{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:6px 20px;margin:1.8em 0}
 .proof dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
@@ -65,6 +66,8 @@ li{margin-bottom:.42em}
 .case{margin:0 0 1.5em}
 .case h3{margin-bottom:.15em}
 .case p{margin:0}
+.outcome{margin:.5em 0 0;font-size:.94rem;color:var(--fg);border-left:2px solid var(--accent);padding-left:12px}
+.tag{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:1px 6px;vertical-align:2px;margin-left:6px}
 
 table{width:100%;border-collapse:collapse;font-size:.94rem;margin:0 0 1.2em}
 td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
@@ -73,6 +76,8 @@ tr:last-child td{border-bottom:0}
 
 footer{margin-top:3.4em;padding-top:1.5em;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
 .note{color:var(--muted);font-size:.86rem}
+.crosslink{border:1px solid var(--rule);border-radius:7px;padding:16px 20px;margin:2.4em 0 0;background:var(--card)}
+.crosslink p{margin:0;font-size:.95rem}
 
 @media (max-width:560px){
   body{padding:0 18px;font-size:16px}
@@ -89,36 +94,37 @@ footer{margin-top:3.4em;padding-top:1.5em;border-top:1px solid var(--rule);color
 <div class="wrap">
 
 <h1>Arifuzzaman Joy</h1>
-<p class="lede">I put LLM and AI-agent systems into production on serverless and rented GPUs, for a fraction of what the managed APIs cost.</p>
+<p class="lede">I put LLM and AI-agent systems into production on serverless and rented GPUs. Sub-200ms p95 on 7B to 70B models, served with vLLM and GPTQ/AWQ quantization, at roughly 60% of what the managed APIs cost.</p>
 <p class="sub">
-  Freelance, based in Bangladesh, working remotely ·
+  Freelance, based in Bangladesh ·
   <a href="mailto:joy.apee@gmail.com">Email</a> ·
   <a href="https://github.com/Arifuzzamanjoy">GitHub</a> ·
   <a href="https://www.linkedin.com/in/arifuzzaman-joy-ru/">LinkedIn</a> ·
-  <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a>
+  <a href="Arifuzzaman_Joy_CV.pdf">CV (PDF)</a>
 </p>
 
 <p class="paths">
   <a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a>
-  <a class="cta ghost" href="#research">Research &amp; graduate study</a>
+  <a class="cta ghost" href="Arifuzzaman_Joy_CV.pdf">Download CV</a>
 </p>
+<p class="rated">Upwork Top Rated · 100% Job Success Score</p>
 
 <p>I trained as an electrical engineer, so I learned computers from the bottom up: semiconductor junctions, then transistors, then the machines built out of them. I now work at the other end of that stack, keeping GPU clusters fed. Most people debugging a CUDA out-of-memory error are reasoning about an abstraction. I'm reasoning about a device with a memory hierarchy, a thermal budget, and a bus that has opinions.</p>
 
 <div class="proof">
 <dl>
-  <dt><a href="https://github.com/vllm-project/vllm-omni/pull/6783">Merged into vLLM omni-modality</a></dt>
-  <dd>6.5k-star omni-modality inference framework</dd>
-  <dt><a href="https://github.com/Osmantic/ODS/pulls?q=is%3Apr+author%3AArifuzzamanjoy">14 pull requests merged into ODS</a></dt>
-  <dd>4.6k-star self-hosted AI server platform</dd>
+  <dt><a href="https://github.com/Osmantic/ODS/pulls?q=is%3Apr+author%3AArifuzzamanjoy+is%3Amerged">14 pull requests merged into ODS</a></dt>
+  <dd>6.0k-star self-hosted AI server platform</dd>
+  <dt><a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">Featured extension in Gen-Verse/LatentMAS</a></dt>
+  <dd>official repo of an ICML 2026 Spotlight paper</dd>
   <dt><a href="https://github.com/casys-kaist/LLMServingSim/pull/59">Merged into LLMServingSim</a></dt>
   <dd>LLM-serving simulator, KAIST research lab</dd>
   <dt><a href="https://github.com/aimclub/OSA/pull/498">Merged into aimclub/OSA</a></dt>
-  <dd>LLM-agent tool for open-source repositories</dd>
-  <dt><a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">Featured extension in Gen-Verse/LatentMAS</a></dt>
-  <dd>official repo of an ICML 2026 Spotlight paper</dd>
-  <dt><a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">5 peer-reviewed papers, 75 citations</a></dt>
-  <dd>h-index 5</dd>
+  <dd>codemeta.json generator, 366 lines</dd>
+  <dt><a href="https://github.com/vllm-project/vllm-omni/pull/6783">Merged into vLLM omni-modality</a></dt>
+  <dd>correctness fix, 145 lines of tests</dd>
+  <dt><a href="research.html">7 peer-reviewed papers, 75+ citations</a></dt>
+  <dd>4 Q1, impact factor up to 7.1</dd>
 </dl>
 </div>
 
@@ -134,62 +140,64 @@ footer{margin-top:3.4em;padding-top:1.5em;border-top:1px solid var(--rule);color
 <h2>Selected work</h2>
 
 <div class="case">
-<h3><a href="https://github.com/Osmantic/ODS/pull/1343">Health checks that don't lie</a></h3>
+<h3><a href="https://github.com/Osmantic/ODS/pull/1343">Health checks that don't lie</a><span class="tag">open PR</span></h3>
 <p>ODS assumed every service spoke HTTP, so anything exposing only TCP or a CLI was marked dead and vanished from the dashboard without an error anyone would see. I threaded a <code>health_type</code> field through the schema, catalog generator, dashboard API and shell scripts, with defaults that inferred correctly so dozens of existing manifests kept working untouched.</p>
+<p class="outcome">TCP-only and CLI-only services stay visible instead of being reported dead. 902 lines added across the stack, with no change required to any existing manifest. Still under review.</p>
 </div>
 
 <div class="case">
 <h3><a href="https://github.com/Arifuzzamanjoy/latent_mas_slora">Agents that think without talking</a></h3>
-<p>Multi-agent systems waste money re-serializing thoughts into English so the next agent can parse them back. I extended the LatentMAS paper (ICML 2026 Spotlight) with role-specialized LoRA adapters that hot-swap at runtime, so one base model plays four agents without four sets of weights in VRAM. The authors added it to their README as a <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">community extension</a>. The repo is equally clear about what it isn't: PEFT adapter management, not true S-LoRA, with benchmarks still on the roadmap.</p>
+<p>Multi-agent systems waste money re-serializing thoughts into English so the next agent can parse them back. I extended the LatentMAS paper (ICML 2026 Spotlight) with role-specialized LoRA adapters that hot-swap at runtime, so one base model plays four agents without four sets of weights in VRAM. The authors added it to their README as a <a href="https://github.com/Gen-Verse/LatentMAS#-5-latentmas-slora">community extension</a>. The repo is equally clear about what it isn't: PEFT adapter management, not true S-LoRA.</p>
+<p class="outcome">12% higher accuracy, 2.7x faster inference, 63.6% fewer tokens and 75% less VRAM, from four-role adapter swapping on a single Qwen 2.5 base.</p>
 </div>
 
 <div class="case">
-<h3><a href="https://github.com/Osmantic/ODS/pull/983">Making rented GPUs behave</a></h3>
-<p>GPU marketplaces hand you a box that is technically the card you paid for and broken in a dozen quiet ways. I wrote a hardened multi-phase installer for it, with GPU-tier detection and roughly 28 documented host-environment failure modes and their fixes. The documentation was most of the value. Anyone can write the happy path.</p>
+<h3><a href="https://github.com/Osmantic/ODS/pull/983">Making rented GPUs behave</a><span class="tag">open PR</span></h3>
+<p>GPU marketplaces hand you a box that is technically the card you paid for and broken in a dozen quiet ways. I wrote a hardened multi-phase installer for it, with GPU-tier detection and 28 documented host-environment failure modes and their fixes. The documentation was most of the value. Anyone can write the happy path.</p>
+<p class="outcome">A 6,250-line P2P GPU deployment toolkit for Vast.ai, covering driver-mismatch repair and 28 host-failure modes. Still under review.</p>
+</div>
+
+<div class="case">
+<h3>Video generation across many GPUs</h3>
+<p>Wan 2.2 text-to-video, image-to-video and speech-to-video, run as distributed inference with FSDP on serverless clusters. Topology-aware placement decides which cards talk to each other, and per-GPU VRAM capping keeps a single greedy rank from taking the whole job down.</p>
+<p class="outcome">3x throughput against the single-GPU baseline.</p>
+</div>
+
+<div class="case">
+<h3>Diffusion workers that cost nothing at rest</h3>
+<p>End-to-end serverless workers for FLUX.2, Whisper and custom diffusion models. Dockerized, CI/CD, autoscaled down when no one is calling them. A LoRA training pipeline sits alongside, so a client can fine-tune and serve from the same setup.</p>
+<p class="outcome">$0 idle cost between requests.</p>
 </div>
 
 <p class="note">More, including an <a href="https://github.com/Arifuzzamanjoy/gpu-broker-mcp">MCP server that brokers GPU compute for agents</a>, at <a href="https://github.com/Arifuzzamanjoy">github.com/Arifuzzamanjoy</a>.</p>
 
 <h2>Right now</h2>
 
-<p><strong>aimclub/OSA.</strong> OSA writes CONTRIBUTING, SECURITY and CODE_OF_CONDUCT for a repository but nothing a machine reads, so <a href="https://github.com/aimclub/OSA/pull/498">I added a <code>codemeta.json</code> generator</a> — the JSON-LD descriptor Zenodo, Software Heritage and most FAIR-software checklists index against. It falls back to <code>pyproject.toml</code> for what the Git host doesn't expose, handles PEP 621 and Poetry author formats, and maps license names to SPDX URLs.</p>
+<p><strong>aimclub/OSA.</strong> OSA writes CONTRIBUTING, SECURITY and CODE_OF_CONDUCT for a repository but nothing a machine reads, so <a href="https://github.com/aimclub/OSA/pull/498">I added a <code>codemeta.json</code> generator</a>. That is the JSON-LD descriptor Zenodo, Software Heritage and most FAIR-software checklists index against. It falls back to <code>pyproject.toml</code> for what the Git host doesn't expose, handles PEP 621 and Poetry author formats, and maps license names to SPDX URLs.</p>
 
 <p><strong>vLLM omni-modality.</strong> <a href="https://github.com/vllm-project/vllm-omni/pull/6783"><code>build_engine_args_dict</code> was mutating the caller's <code>stage_config.engine_args</code></a>, so engine args leaked from one pipeline stage into the next. A one-line <code>deepcopy</code> fix and 145 lines of tests covering idempotency and nested-dict isolation. The fix is trivial. Proving it stays fixed isn't.</p>
 
-<p><strong><a href="https://github.com/Arifuzzamanjoy/wacrm">wacrm</a>.</strong> Turning a self-hostable WhatsApp CRM (Next.js 16, Supabase) into a vertical for immigration consultancies: automated expiry and compliance monitoring, interactive WhatsApp eligibility and CRS-calculator flows, and account-authored document checklists.</p>
-
-<h2 id="research">Research and graduate study</h2>
-
-<p><strong>I'm applying to Master's programs in computer science and machine learning systems.</strong> My published work is applied ML in two domains with the same instinct behind both: take a physical system that's slow or expensive to measure, and learn a model of it good enough to search. Five peer-reviewed papers, 75 citations, h-index 5, one as first author.</p>
-
-<p>What I want next is the systems side of ML rather than the applications side — efficient inference and serving, multi-agent architectures, and the memory and scheduling problems that appear when models meet real hardware. That's not a new interest: I've contributed to a <a href="https://github.com/casys-kaist/LLMServingSim/pull/59">KAIST lab's LLM-serving simulator</a>, and my extension of an ICML Spotlight paper was adopted into the authors' own repo. My electrical engineering training is why I find these problems legible.</p>
-
-<table>
-<tr><td><a href="https://doi.org/10.14569/IJACSA.2024.01507126">Open-source transformers in medical imaging</a> <span class="note">brain MRI, 99.60% accuracy</span></td><td>IJACSA · 2024</td></tr>
-<tr><td><a href="https://doi.org/10.1016/j.seta.2025.104264">ML-assisted design of single heterojunction thermophotovoltaic cells</a></td><td>Sust. Energy Tech. &amp; Assess. (Q1) · 2025</td></tr>
-<tr><td><a href="https://doi.org/10.1016/j.solener.2024.112870">ML-enabled performance exploration of AuCuSe₄</a></td><td>Solar Energy (Q1) · 2024</td></tr>
-<tr><td><a href="https://doi.org/10.1016/j.heliyon.2023.e19011">Ternary AgInTe₂ chalcopyrite thin-film cell</a> <span class="note">first author</span></td><td>Heliyon (Q1) · 2023</td></tr>
-<tr><td><a href="https://doi.org/10.1002/nano.202200228">PV performance of a CZTS-based thin-film cell</a></td><td>Nano Select (Q2) · 2023</td></tr>
-</table>
-
-<p class="note">B.Sc. in Electrical &amp; Electronic Engineering, University of Rajshahi. <a href="https://orcid.org/0009-0005-2420-6585">ORCID</a> · <a href="https://www.researchgate.net/profile/Arifuzzaman-Joy">ResearchGate</a></p>
+<p class="note">Last updated 4 September 2026.</p>
 
 <h2>Get in touch</h2>
 
-<p><strong>Contract work.</strong> Send the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me. I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
-
-<p><strong>Graduate study.</strong> If my interests line up with your group, email me and I'll send a CV and a longer statement.</p>
+<p>Send the model, your latency target, and the budget. You'll get a straight answer about what it takes, including when the answer is that you don't need me. I do my best work when the thing being built has some reason to exist beyond a funding round.</p>
 
 <p class="paths">
   <a class="cta" href="https://www.upwork.com/freelancers/arifuzzamanj2">Hire me on Upwork</a>
   <a class="cta ghost" href="mailto:joy.apee@gmail.com">joy.apee@gmail.com</a>
 </p>
 
+<div class="crosslink">
+<p>Academic reader? My publications, research interests and graduate-study plans are on the <a href="research.html">research page</a>.</p>
+</div>
+
 <footer>
   <a href="https://github.com/Arifuzzamanjoy">GitHub</a> ·
   <a href="https://www.linkedin.com/in/arifuzzaman-joy-ru/">LinkedIn</a> ·
   <a href="https://scholar.google.com/citations?user=MGxpI3sAAAAJ&amp;hl=en">Scholar</a> ·
-  <a href="https://huggingface.co/Joyapeee">Hugging Face</a>
+  <a href="https://huggingface.co/Joyapeee">Hugging Face</a> ·
+  <a href="Arifuzzaman_Joy_CV.pdf">CV</a>
 </footer>
 
 </div>
