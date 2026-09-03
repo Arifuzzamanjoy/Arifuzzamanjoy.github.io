@@ -150,6 +150,8 @@ footer{margin-top:3.4em;padding-top:1.5em;border-top:1px solid var(--rule);color
 
 <h2>Right now</h2>
 
+<p><strong>aimclub/OSA.</strong> OSA writes CONTRIBUTING, SECURITY and CODE_OF_CONDUCT for a repository but nothing a machine reads, so <a href="https://github.com/aimclub/OSA/pull/498">I added a <code>codemeta.json</code> generator</a> — the JSON-LD descriptor Zenodo, Software Heritage and most FAIR-software checklists index against. It falls back to <code>pyproject.toml</code> for what the Git host doesn't expose, handles PEP 621 and Poetry author formats, and maps license names to SPDX URLs.</p>
+
 <p><strong>vLLM omni-modality.</strong> <a href="https://github.com/vllm-project/vllm-omni/pull/6783"><code>build_engine_args_dict</code> was mutating the caller's <code>stage_config.engine_args</code></a>, so engine args leaked from one pipeline stage into the next. A one-line <code>deepcopy</code> fix and 145 lines of tests covering idempotency and nested-dict isolation. The fix is trivial. Proving it stays fixed isn't.</p>
 
 <p><strong><a href="https://github.com/Arifuzzamanjoy/wacrm">wacrm</a>.</strong> Turning a self-hostable WhatsApp CRM (Next.js 16, Supabase) into a vertical for immigration consultancies: automated expiry and compliance monitoring, interactive WhatsApp eligibility and CRS-calculator flows, and account-authored document checklists.</p>
